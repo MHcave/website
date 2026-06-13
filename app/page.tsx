@@ -57,10 +57,10 @@ const SECTIONS = [
     icon: <Film className="w-6 h-6" />, 
     description: "Telling stories through motion and light. I explore visual narratives that challenge perspectives and evoke emotional responses.",
     videos: [
-      { src: "/images/GAP.PSA.mp4", title: "Video 3 Title", description: "Introduction for Video 3" },
-      { src: "/images/C0329.mp4", title: "Video 2 Title", description: "Introduction for Video 2" },
-      { src: "/images/Sequence 04_1.mp4", title: "Video 1 Title", description: "Introduction for Video 1" },
-      { src: "/images/From World to Webb.mp4", title: "Video 4 Title", description: "Introduction for Video 4" },
+      { src: "https://www.youtube.com/embed/UCMLRu2iUjw", title: "Video 1 Title", description: "Introduction for Video 1" },
+      { src: "https://www.youtube.com/embed/fzGAYgGAnxg", title: "Video 2 Title", description: "Introduction for Video 2" },
+      { src: "https://www.youtube.com/embed/X6QUnVPvIe0", title: "Video 3 Title", description: "Introduction for Video 3" },
+      { src: "https://www.youtube.com/embed/tcTpSjCfeXI", title: "Video 4 Title", description: "Introduction for Video 4" },
     ]
   },
 
@@ -296,10 +296,14 @@ export default function Home() {
                       <p className="text-base text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-3xl text-center mb-4">
                         {video.description}
                       </p>
-                      <video controls className="w-full max-w-5xl h-auto rounded-lg shadow-lg">
-                        <source src={video.src} type="video/mp4" />
-                        Your browser does not support the video tag.
-                      </video>
+                      <iframe
+                        src={video.src}
+                        title={video.title}
+                        className="w-full max-w-5xl aspect-video rounded-lg shadow-lg"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                      />
                       <h4 className="text-xl font-bold tracking-tighter mt-4">{video.title}</h4>
                     </div>
                   ))}
