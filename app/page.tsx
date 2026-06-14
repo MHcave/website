@@ -26,7 +26,65 @@ const SECTIONS = [
     id: "engineering", 
     title: "Engineering", 
     icon: <Lightbulb className="w-6 h-6" />, 
-    description: "Solving complex problems through design and implementation. My focus lies at the intersection of mechanical integrity and innovative systems." 
+    description: "Solving complex problems through design and implementation. My focus lies at the intersection of mechanical integrity and innovative systems.",
+    sections: [
+      {
+        title: "Academic Accomplishment",
+        description: "Use this area to highlight coursework, awards, competitions, and milestones that reflect your engineering foundation.",
+        honors: [
+          {
+            title: "Conrad Alternate Finalist",
+            documents: [
+              "/Conrad/Congratulations%20Conrad%20Alternate%20Finalist!.pdf",
+              "/Conrad/ovBZdEXb.pdf",
+            ],
+          },
+          {
+            title: "Blue Ocean Top 500",
+            documents: [
+              "/Blue%20ocean.pdf",
+            ],
+          },
+        ]
+      },
+      {
+        title: "Robotics",
+        description: "Use this section to showcase robot builds, team contributions, design iterations, and technical problem-solving.",
+        items: [
+          {
+            title: "2025-2026 Season",
+            images: [
+              "/2025-2026/WechatIMG732.jpg",
+              "/2025-2026/WechatIMG737.jpg",
+              "/2025-2026/WechatIMG738.jpg",
+              "/2025-2026/WechatIMG739.jpg",
+              "/2025-2026/WechatIMG740.jpg",
+              "/2025-2026/WechatIMG742.jpg",
+            ],
+          },
+          {
+            title: "2026-2027 Season",
+          },
+          {
+            title: "Underwater ROV Project",
+          },
+        ]
+      },
+      {
+        title: "Engineering Research",
+        description: "Use this space for research questions, methods, findings, and the broader impact of your engineering investigations.",
+        researchProjects: [
+          {
+            title: "Amphibious Beaver Robotics",
+            document: "/Amphibious.pdf",
+          },
+          {
+            title: "EEG and Machine Learning",
+            link: "https://docs.google.com/document/d/1-pD5bhVVymJrBKz6nYygzYWdBbIQj1vyBOT-AdYG3x0/edit?usp=sharing",
+          },
+        ]
+      },
+    ]
   },
   { 
     id: "mathematics", 
@@ -259,7 +317,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: index * 0.1 }}
-            className={section.id === "filmmaking" || section.id === "articles" || section.id === "mathematics" ? "min-h-screen flex flex-col justify-center border-t border-black/10 dark:border-white/10 pt-16 scroll-snap-align-start" : "grid grid-cols-1 md:grid-cols-2 gap-16 items-start border-t border-black/10 dark:border-white/10 pt-16"}
+            className={section.id === "filmmaking" || section.id === "articles" || section.id === "mathematics" || section.id === "engineering" ? "min-h-screen flex flex-col justify-center border-t border-black/10 dark:border-white/10 pt-16 scroll-snap-align-start" : "grid grid-cols-1 md:grid-cols-2 gap-16 items-start border-t border-black/10 dark:border-white/10 pt-16"}
           >
             {section.id === "filmmaking" ? (
               <>
@@ -373,6 +431,151 @@ export default function Home() {
                     >
                       <iframe src={note.src} className="w-full h-[75vh] lg:h-[85vh] rounded-lg shadow-lg" title={note.title}></iframe>
                       <h4 className="text-xl font-bold tracking-tighter mt-4">{note.title}</h4>
+                    </div>
+                  ))}
+                </div>
+              </>
+            ) : section.id === "engineering" ? (
+              <>
+                <div className="flex items-start gap-4 mb-8">
+                  <div className="p-3 bg-black text-white dark:bg-white dark:text-black rounded-full">
+                    {section.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-4xl font-bold tracking-tighter uppercase mb-4">{section.title}</h3>
+                    <p className="text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed">
+                      {section.description}
+                    </p>
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                  {section.sections && section.sections.map((engineeringSection, engineeringIndex) => (
+                    <div
+                      key={engineeringIndex}
+                      className="min-h-[20rem] rounded-2xl border border-black/10 dark:border-white/10 bg-zinc-50 dark:bg-zinc-900/40 p-8 flex flex-col justify-between"
+                    >
+                      <div>
+                        <p className="text-xs font-bold uppercase tracking-[0.2em] opacity-40 mb-4">
+                          {String(engineeringIndex + 1).padStart(2, "0")}
+                        </p>
+                        <h4 className="text-2xl font-bold tracking-tighter mb-4">
+                          {engineeringSection.title}
+                        </h4>
+                        <p className="text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                          {engineeringSection.description}
+                        </p>
+                        {"honors" in engineeringSection && engineeringSection.honors && (
+                          <div className="mt-6 grid grid-cols-1 xl:grid-cols-2 gap-6">
+                            {engineeringSection.honors.map((honor) => (
+                              <div
+                                key={honor.title}
+                                className="rounded-xl border border-black/10 dark:border-white/10 p-4 md:p-5"
+                              >
+                                <h5 className="text-lg font-semibold tracking-tight mb-4">
+                                  {honor.title}
+                                </h5>
+                                <div className={`grid gap-4 ${honor.documents.length > 1 ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1"}`}>
+                                  {honor.documents.map((documentSrc, documentIndex) => (
+                                    <div key={documentSrc} className="rounded-xl border border-black/10 dark:border-white/10 p-3">
+                                      <iframe
+                                        src={documentSrc}
+                                        title={`${honor.title} document ${documentIndex + 1}`}
+                                        className="w-full h-[22rem] rounded-lg shadow-sm"
+                                      />
+                                      <div className="mt-3 rounded-lg bg-black/[0.03] dark:bg-white/[0.04] px-4 py-3">
+                                        <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-40">
+                                          Brief Description
+                                        </p>
+                                        <div className="mt-2 min-h-[3.5rem]" />
+                                      </div>
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                        {"items" in engineeringSection && engineeringSection.items && (
+                          <div className="mt-6 space-y-3">
+                            {engineeringSection.items.map((item, itemIndex) => (
+                              <div
+                                key={item.title}
+                                className="rounded-xl border border-black/10 dark:border-white/10 px-4 py-4"
+                              >
+                                <p className="text-sm font-medium tracking-tight">
+                                  {itemIndex + 1}. {item.title}
+                                </p>
+                                {item.images && (
+                                  <div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-3">
+                                    {item.images.map((imageSrc, imageIndex) => (
+                                      <div
+                                        key={imageSrc}
+                                        className="group relative aspect-[4/5] overflow-hidden rounded-xl"
+                                      >
+                                        <Image
+                                          src={imageSrc}
+                                          alt={`${item.title} photo ${imageIndex + 1}`}
+                                          fill
+                                          className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                                          sizes="(max-width: 768px) 50vw, 25vw"
+                                        />
+                                      </div>
+                                    ))}
+                                  </div>
+                                )}
+                                <div className="mt-4 min-h-[6rem] rounded-lg bg-black/[0.03] dark:bg-white/[0.04]" />
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                        {"researchProjects" in engineeringSection && engineeringSection.researchProjects && (
+                          <div className="mt-6 grid grid-cols-1 xl:grid-cols-2 gap-6">
+                            {engineeringSection.researchProjects.map((project, projectIndex) => (
+                              <div
+                                key={project.title}
+                                className="rounded-xl border border-black/10 dark:border-white/10 p-4 md:p-5"
+                              >
+                                <p className="text-sm font-medium tracking-tight mb-4">
+                                  {projectIndex + 1}. {project.title}
+                                </p>
+                                {"document" in project && project.document && (
+                                  <iframe
+                                    src={project.document}
+                                    title={project.title}
+                                    className="w-full h-[24rem] rounded-lg shadow-sm"
+                                  />
+                                )}
+                                {"link" in project && project.link && (
+                                  <div>
+                                    <iframe
+                                      src={project.link.replace("/edit?usp=sharing", "/preview")}
+                                      title={project.title}
+                                      className="w-full h-[24rem] rounded-lg shadow-sm"
+                                    />
+                                    <a
+                                      href={project.link}
+                                      target="_blank"
+                                      rel="noreferrer"
+                                      className="mt-3 inline-flex text-sm font-medium underline underline-offset-4 hover:opacity-70"
+                                    >
+                                      Open in Google Docs
+                                    </a>
+                                  </div>
+                                )}
+                                <div className="mt-4 rounded-lg bg-black/[0.03] dark:bg-white/[0.04] px-4 py-3">
+                                  <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-40">
+                                    Brief Description
+                                  </p>
+                                  <div className="mt-2 min-h-[4rem]" />
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                      <p className="mt-8 text-sm uppercase tracking-[0.18em] opacity-35">
+                        Add content here
+                      </p>
                     </div>
                   ))}
                 </div>
