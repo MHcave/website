@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import { 
   ArrowDown,
@@ -76,20 +76,18 @@ const SECTIONS = [
         ]
       },
       {
-        title: "Engineering Research",
-        description: "Use this space for research questions, methods, findings, and the broader impact of your engineering investigations.",
-        researchProjects: [
-          {
-            title: "Amphibious Beaver Robotics",
-            summary: "A research direction exploring a bio-inspired robotic system and how mobility across different environments can inform engineering design.",
-            document: "/Amphibious.pdf",
-          },
-          {
-            title: "EEG and Machine Learning",
-            summary: "A project focused on interpreting brain-signal data with machine learning in a way that is accessible and meaningful to a general audience.",
-            link: "https://docs.google.com/document/d/1-pD5bhVVymJrBKz6nYygzYWdBbIQj1vyBOT-AdYG3x0/edit?usp=sharing",
-          },
-        ]
+        title: "Beaver Amphibious Robotics",
+        description: "A research direction exploring a bio-inspired robotic system and how mobility across different environments can inform engineering design.",
+        document: "/Amphibious.pdf",
+      },
+      {
+        title: "EEG Machine Learning",
+        description: "A project focused on interpreting brain-signal data with machine learning in a way that is accessible and meaningful to a general audience.",
+        link: "https://docs.google.com/document/d/1-pD5bhVVymJrBKz6nYygzYWdBbIQj1vyBOT-AdYG3x0/edit?usp=sharing",
+      },
+      {
+        title: "VR Application, Underwater Remote Control Vehicle",
+        description: "Space reserved for a project summary explaining the idea, the user experience, and how remote control and immersion connect in the design.",
       },
     ]
   },
@@ -160,20 +158,16 @@ const SECTIONS = [
 ];
 
 export default function Home() {
-  const [mounted, setMounted] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [activeEngineeringTab, setActiveEngineeringTab] = useState(0);
   const [activeRoboticsTab, setActiveRoboticsTab] = useState(0);
   const [activeMathTab, setActiveMathTab] = useState(0);
   const [activeArticleTab, setActiveArticleTab] = useState(0);
   const [activeVideoTab, setActiveVideoTab] = useState(0);
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
-    target: mounted ? containerRef : undefined,
+    target: containerRef,
   });
 
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-80%"]);
@@ -220,7 +214,7 @@ export default function Home() {
       ).slice(0, 6)
     : [];
 
-  const handleSearchSelect = (href: string, label: string) => {
+  const handleSearchSelect = (href: string) => {
     setSearchQuery("");
     const target = document.querySelector(href);
     if (target instanceof HTMLElement) {
@@ -232,18 +226,9 @@ export default function Home() {
   const handleSearchSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (filteredSearchItems.length > 0) {
-      handleSearchSelect(filteredSearchItems[0].href, filteredSearchItems[0].label);
+      handleSearchSelect(filteredSearchItems[0].href);
     }
   };
-
-  if (!mounted) {
-    return (
-      <main
-        id="top"
-        className="min-h-screen bg-white text-black selection:bg-black selection:text-white dark:bg-black dark:text-white dark:selection:bg-white dark:selection:text-black"
-      />
-    );
-  }
 
   return (
     <main
@@ -287,7 +272,7 @@ export default function Home() {
                   <button
                     key={`${item.category}-${item.href}`}
                     type="button"
-                    onClick={() => handleSearchSelect(item.href, item.label)}
+                    onClick={() => handleSearchSelect(item.href)}
                     className="flex w-full items-center justify-between px-4 py-3 text-left text-sm transition hover:bg-black/5 dark:hover:bg-white/5"
                   >
                     <span>{item.label}</span>
@@ -311,7 +296,7 @@ export default function Home() {
           <div className="max-w-4xl">
             <h2 className="text-5xl md:text-7xl font-semibold tracking-tight leading-tight">
               <span className="inline-block border-b border-white/60 pb-3">
-                Michael Huang's Portfolio
+                Michael Huang&apos;s Portfolio
               </span>
             </h2>
             <p className="mt-4 text-base md:text-lg opacity-90">
@@ -357,12 +342,18 @@ export default function Home() {
           const iconWrapperClass = isDarkSection
             ? "p-3 bg-white text-black rounded-full"
             : "p-3 bg-black text-white rounded-full";
+          const tabListClass = isDarkSection
+            ? "inline-flex flex-wrap gap-3 rounded-[1.75rem] border border-white/15 bg-white/[0.04] p-2"
+            : "inline-flex flex-wrap gap-3 rounded-[1.75rem] border border-black/10 bg-black/[0.03] p-2";
+          const tabButtonBaseClass = isDarkSection
+            ? "inline-flex items-center gap-2 rounded-2xl border px-4 py-2.5 text-sm font-semibold tracking-tight transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+            : "inline-flex items-center gap-2 rounded-2xl border px-4 py-2.5 text-sm font-semibold tracking-tight transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/20 focus-visible:ring-offset-2 focus-visible:ring-offset-white";
           const activeTabClass = isDarkSection
-            ? "border-white bg-white text-black"
-            : "border-black bg-black text-white";
+            ? "border-white bg-white text-black shadow-[0_14px_34px_rgba(255,255,255,0.18)]"
+            : "border-black bg-black text-white shadow-[0_14px_34px_rgba(0,0,0,0.14)]";
           const inactiveTabClass = isDarkSection
-            ? "border-white/15 bg-transparent text-white hover:bg-white/10"
-            : "border-black/10 bg-white text-black hover:bg-black/5";
+            ? "border-white/20 bg-transparent text-white/78 hover:border-white/45 hover:bg-white/10 hover:text-white"
+            : "border-black/15 bg-white text-black/75 hover:border-black/40 hover:bg-black/5 hover:text-black";
           const panelClass = isDarkSection
             ? "rounded-2xl border border-white/10 bg-zinc-900/40"
             : "rounded-2xl border border-black/10 bg-zinc-50";
@@ -396,18 +387,32 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <div className="flex flex-wrap gap-3">
+                <div className={tabListClass} role="tablist" aria-label={`${section.title} videos`}>
                   {section.videos && section.videos.map((video, videoIndex) => (
                     <button
                       key={video.title}
                       type="button"
                       onClick={() => setActiveVideoTab(videoIndex)}
-                      className={`rounded-full border px-4 py-2 text-sm transition ${sectionBorderClass} ${
+                      role="tab"
+                      aria-selected={activeVideoTab === videoIndex}
+                      className={`${tabButtonBaseClass} ${
                         activeVideoTab === videoIndex
                           ? activeTabClass
                           : inactiveTabClass
                       }`}
                     >
+                      <span
+                        aria-hidden="true"
+                        className={`h-2.5 w-2.5 rounded-full transition ${
+                          activeVideoTab === videoIndex
+                            ? isDarkSection
+                              ? "bg-black"
+                              : "bg-white"
+                            : isDarkSection
+                              ? "bg-white/35"
+                              : "bg-black/20"
+                        }`}
+                      />
                       {video.title}
                     </button>
                   ))}
@@ -464,18 +469,32 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <div className="flex flex-wrap gap-3">
+                <div className={tabListClass} role="tablist" aria-label={`${section.title} files`}>
                   {section.files && section.files.map((file, fileIndex) => (
                     <button
                       key={file.title}
                       type="button"
                       onClick={() => setActiveArticleTab(fileIndex)}
-                      className={`rounded-full border px-4 py-2 text-sm transition ${sectionBorderClass} ${
+                      role="tab"
+                      aria-selected={activeArticleTab === fileIndex}
+                      className={`${tabButtonBaseClass} ${
                         activeArticleTab === fileIndex
                           ? activeTabClass
                           : inactiveTabClass
                       }`}
                     >
+                      <span
+                        aria-hidden="true"
+                        className={`h-2.5 w-2.5 rounded-full transition ${
+                          activeArticleTab === fileIndex
+                            ? isDarkSection
+                              ? "bg-black"
+                              : "bg-white"
+                            : isDarkSection
+                              ? "bg-white/35"
+                              : "bg-black/20"
+                        }`}
+                      />
                       {file.title}
                     </button>
                   ))}
@@ -521,18 +540,32 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <div className="flex flex-wrap gap-3">
+                <div className={tabListClass} role="tablist" aria-label={`${section.title} notes`}>
                   {section.notes && section.notes.map((note, noteIndex) => (
                     <button
                       key={note.title}
                       type="button"
                       onClick={() => setActiveMathTab(noteIndex)}
-                      className={`rounded-full border px-4 py-2 text-sm transition ${sectionBorderClass} ${
+                      role="tab"
+                      aria-selected={activeMathTab === noteIndex}
+                      className={`${tabButtonBaseClass} ${
                         activeMathTab === noteIndex
                           ? activeTabClass
                           : inactiveTabClass
                       }`}
                     >
+                      <span
+                        aria-hidden="true"
+                        className={`h-2.5 w-2.5 rounded-full transition ${
+                          activeMathTab === noteIndex
+                            ? isDarkSection
+                              ? "bg-black"
+                              : "bg-white"
+                            : isDarkSection
+                              ? "bg-white/35"
+                              : "bg-black/20"
+                        }`}
+                      />
                       {note.title}
                     </button>
                   ))}
@@ -578,18 +611,32 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <div className="flex flex-wrap gap-3">
+                <div className={tabListClass} role="tablist" aria-label={`${section.title} sections`}>
                   {section.sections && section.sections.map((engineeringSection, engineeringIndex) => (
                     <button
                       key={engineeringSection.title}
                       type="button"
                       onClick={() => setActiveEngineeringTab(engineeringIndex)}
-                      className={`rounded-full border px-4 py-2 text-sm transition ${sectionBorderClass} ${
+                      role="tab"
+                      aria-selected={activeEngineeringTab === engineeringIndex}
+                      className={`${tabButtonBaseClass} ${
                         activeEngineeringTab === engineeringIndex
                           ? activeTabClass
                           : inactiveTabClass
                       }`}
                     >
+                      <span
+                        aria-hidden="true"
+                        className={`h-2.5 w-2.5 rounded-full transition ${
+                          activeEngineeringTab === engineeringIndex
+                            ? isDarkSection
+                              ? "bg-black"
+                              : "bg-white"
+                            : isDarkSection
+                              ? "bg-white/35"
+                              : "bg-black/20"
+                        }`}
+                      />
                       {engineeringSection.title}
                     </button>
                   ))}
@@ -644,18 +691,32 @@ export default function Home() {
                       )}
                       {"items" in activeEngineeringSection && activeEngineeringSection.items && (
                         <div className="mt-6">
-                          <div className="flex flex-wrap gap-3">
+                          <div className={tabListClass} role="tablist" aria-label={`${activeEngineeringSection.title} projects`}>
                             {activeEngineeringSection.items.map((item, itemIndex) => (
                               <button
                                 key={item.title}
                                 type="button"
                                 onClick={() => setActiveRoboticsTab(itemIndex)}
-                                className={`rounded-full border px-4 py-2 text-sm transition ${sectionBorderClass} ${
+                                role="tab"
+                                aria-selected={activeRoboticsTab === itemIndex}
+                                className={`${tabButtonBaseClass} ${
                                   activeRoboticsTab === itemIndex
                                     ? activeTabClass
                                     : inactiveTabClass
                                 }`}
                               >
+                                <span
+                                  aria-hidden="true"
+                                  className={`h-2.5 w-2.5 rounded-full transition ${
+                                    activeRoboticsTab === itemIndex
+                                      ? isDarkSection
+                                        ? "bg-black"
+                                        : "bg-white"
+                                      : isDarkSection
+                                        ? "bg-white/35"
+                                        : "bg-black/20"
+                                  }`}
+                                />
                                 {item.title}
                               </button>
                             ))}
@@ -697,51 +758,46 @@ export default function Home() {
                           })()}
                         </div>
                       )}
-                      {"researchProjects" in activeEngineeringSection && activeEngineeringSection.researchProjects && (
-                        <div className="mt-6 grid grid-cols-1 xl:grid-cols-2 gap-6">
-                          {activeEngineeringSection.researchProjects.map((project, projectIndex) => (
-                            <div
-                              key={project.title}
-                              className={`${innerCardClass} p-5`}
+                      {"document" in activeEngineeringSection && activeEngineeringSection.document && (
+                        <div className={`mt-6 ${innerCardClass} p-5`}>
+                          <div className="mt-2 flex flex-wrap gap-3">
+                            <a
+                              href={activeEngineeringSection.document}
+                              target="_blank"
+                              rel="noreferrer"
+                              className={`inline-flex items-center gap-2 rounded-full border ${sectionBorderClass} px-4 py-2 text-sm transition ${isDarkSection ? "hover:bg-white/10" : "hover:bg-black/5"}`}
                             >
-                              <p className="text-sm font-medium tracking-tight">
-                                {projectIndex + 1}. {project.title}
-                              </p>
-                              <p className={`mt-3 text-sm leading-relaxed ${sectionMutedClass}`}>
-                                {project.summary}
-                              </p>
-                              <div className="mt-5 flex flex-wrap gap-3">
-                                {"document" in project && project.document && (
-                                  <a
-                                    href={project.document}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className={`inline-flex items-center gap-2 rounded-full border ${sectionBorderClass} px-4 py-2 text-sm transition ${isDarkSection ? "hover:bg-white/10" : "hover:bg-black/5"}`}
-                                  >
-                                    Open PDF
-                                    <ArrowRight className="h-4 w-4" />
-                                  </a>
-                                )}
-                                {"link" in project && project.link && (
-                                  <a
-                                    href={project.link}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className={`inline-flex items-center gap-2 rounded-full border ${sectionBorderClass} px-4 py-2 text-sm transition ${isDarkSection ? "hover:bg-white/10" : "hover:bg-black/5"}`}
-                                  >
-                                    Open Research Document
-                                    <ArrowRight className="h-4 w-4" />
-                                  </a>
-                                )}
-                              </div>
-                              <div className={`mt-5 ${softBlockClass} px-4 py-3`}>
-                                <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-40">
-                                  Brief Description for a General Reader
-                                </p>
-                                <div className="mt-2 min-h-[4rem]" />
-                              </div>
-                            </div>
-                          ))}
+                              Open PDF
+                              <ArrowRight className="h-4 w-4" />
+                            </a>
+                          </div>
+                          <div className={`mt-5 ${softBlockClass} px-4 py-3`}>
+                            <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-40">
+                              Brief Description for a General Reader
+                            </p>
+                            <div className="mt-2 min-h-[4rem]" />
+                          </div>
+                        </div>
+                      )}
+                      {"link" in activeEngineeringSection && activeEngineeringSection.link && (
+                        <div className={`mt-6 ${innerCardClass} p-5`}>
+                          <div className="mt-2 flex flex-wrap gap-3">
+                            <a
+                              href={activeEngineeringSection.link}
+                              target="_blank"
+                              rel="noreferrer"
+                              className={`inline-flex items-center gap-2 rounded-full border ${sectionBorderClass} px-4 py-2 text-sm transition ${isDarkSection ? "hover:bg-white/10" : "hover:bg-black/5"}`}
+                            >
+                              Open Research Document
+                              <ArrowRight className="h-4 w-4" />
+                            </a>
+                          </div>
+                          <div className={`mt-5 ${softBlockClass} px-4 py-3`}>
+                            <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-40">
+                              Brief Description for a General Reader
+                            </p>
+                            <div className="mt-2 min-h-[4rem]" />
+                          </div>
                         </div>
                       )}
                     </div>
