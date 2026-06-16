@@ -34,6 +34,7 @@ const SECTIONS = [
         honors: [
           {
             title: "Conrad Alternate Finalist",
+            summary: "A recognition that highlights idea development, communication, and the ability to turn technical thinking into a compelling innovation story.",
             documents: [
               "/Conrad/Congratulations%20Conrad%20Alternate%20Finalist!.pdf",
               "/Conrad/ovBZdEXb.pdf",
@@ -41,6 +42,7 @@ const SECTIONS = [
           },
           {
             title: "Blue Ocean Top 500",
+            summary: "An achievement that reflects entrepreneurial thinking and the ability to shape a technical idea into a broader real-world opportunity.",
             documents: [
               "/Blue%20ocean.pdf",
             ],
@@ -53,6 +55,7 @@ const SECTIONS = [
         items: [
           {
             title: "2025-2026 Season",
+            summary: "A visual record of building, testing, collaborating, and refining the robot through the season.",
             images: [
               "/2025-2026/WechatIMG732.jpg",
               "/2025-2026/WechatIMG737.jpg",
@@ -64,9 +67,11 @@ const SECTIONS = [
           },
           {
             title: "2026-2027 Season",
+            summary: "Space reserved for future season updates, design progress, and competition reflections.",
           },
           {
             title: "Underwater ROV Project",
+            summary: "Space reserved for the underwater robotics concept, system design, and testing insights.",
           },
         ]
       },
@@ -76,10 +81,12 @@ const SECTIONS = [
         researchProjects: [
           {
             title: "Amphibious Beaver Robotics",
+            summary: "A research direction exploring a bio-inspired robotic system and how mobility across different environments can inform engineering design.",
             document: "/Amphibious.pdf",
           },
           {
             title: "EEG and Machine Learning",
+            summary: "A project focused on interpreting brain-signal data with machine learning in a way that is accessible and meaningful to a general audience.",
             link: "https://docs.google.com/document/d/1-pD5bhVVymJrBKz6nYygzYWdBbIQj1vyBOT-AdYG3x0/edit?usp=sharing",
           },
         ]
@@ -92,9 +99,9 @@ const SECTIONS = [
     icon: <Sigma className="w-6 h-6" />, 
     description: "Exploring the elegance of numbers and structural patterns. From abstract proofs to applied models, mathematics forms the foundation of my logical reasoning.",
     notes: [
-      { src: "/Notes/HPC.pdf", title: "HPC" },
-      { src: "/Notes/calc%201.pdf", title: "Calc 1" },
-      { src: "/Notes/Calc%202.pdf", title: "Calc 2" },
+      { src: "/Notes/HPC.pdf", title: "HPC", summary: "A note set that reflects advanced problem-solving and structured mathematical reasoning." },
+      { src: "/Notes/calc%201.pdf", title: "Calc 1", summary: "A note set focused on the fundamentals of calculus and the way change can be modeled precisely." },
+      { src: "/Notes/Calc%202.pdf", title: "Calc 2", summary: "A continuation into deeper calculus ideas, emphasizing technique, interpretation, and mathematical persistence." },
     ]
   },
   { 
@@ -103,10 +110,10 @@ const SECTIONS = [
     icon: <BookOpen className="w-6 h-6" />, 
     description: "Writing on topics ranging from technical analysis to personal reflections on philosophy and design.",
     files: [
-      { src: "/articles/article1.pdf", title: "Article 1: The Future of AI", description: "An introductory article on the advancements and future implications of Artificial Intelligence." },
-      { src: "/articles/article2.pdf", title: "Article 2: Quantum Computing Explained", description: "A simplified explanation of quantum computing and its potential impact." },
-      { src: "/articles/article3.pdf", title: "Article 3: Renewable Energy Solutions", description: "Exploring sustainable energy sources and their role in a greener future." },
-      { src: "/articles/article4.pdf", title: "Article 4: The Psychology of Design", description: "Understanding how design principles influence human perception and behavior." },
+      { src: "/articles/article1.pdf", title: "Article 1: The Future of AI", description: "A plain-language overview of how AI is evolving and why that matters beyond the technical world." },
+      { src: "/articles/article2.pdf", title: "Article 2: Quantum Computing Explained", description: "A simplified explanation of quantum computing designed for readers who are curious but not specialists." },
+      { src: "/articles/article3.pdf", title: "Article 3: Renewable Energy Solutions", description: "A reader-friendly look at how sustainable energy choices connect to real-world environmental challenges." },
+      { src: "/articles/article4.pdf", title: "Article 4: The Psychology of Design", description: "A reflection on how design shapes human attention, emotion, and everyday decision-making." },
     ]
   },
   { 
@@ -115,10 +122,38 @@ const SECTIONS = [
     icon: <Film className="w-6 h-6" />, 
     description: "Telling stories through motion and light. I explore visual narratives that challenge perspectives and evoke emotional responses.",
     videos: [
-      { src: "https://www.youtube.com/embed/UCMLRu2iUjw", title: "Video 1 Title", description: "Introduction for Video 1" },
-      { src: "https://www.youtube.com/embed/fzGAYgGAnxg", title: "Video 2 Title", description: "Introduction for Video 2" },
-      { src: "https://www.youtube.com/embed/X6QUnVPvIe0", title: "Video 3 Title", description: "Introduction for Video 3" },
-      { src: "https://www.youtube.com/embed/tcTpSjCfeXI", title: "Video 4 Title", description: "Introduction for Video 4" },
+      {
+        src: "https://www.youtube.com/embed/UCMLRu2iUjw",
+        title: "Video 1 Title",
+        description: "A short project summary written for viewers who may know nothing about the background of the piece.",
+        background: "Use this space to explain why this film was made and what context inspired it.",
+        role: "Use this space to describe your role in planning, filming, editing, or directing.",
+        detail: "Use this space to share one memorable challenge, experiment, or fun behind-the-scenes detail.",
+      },
+      {
+        src: "https://www.youtube.com/embed/fzGAYgGAnxg",
+        title: "Video 2 Title",
+        description: "A short project summary written for viewers who may know nothing about the background of the piece.",
+        background: "Use this space to explain why this film was made and what context inspired it.",
+        role: "Use this space to describe your role in planning, filming, editing, or directing.",
+        detail: "Use this space to share one memorable challenge, experiment, or fun behind-the-scenes detail.",
+      },
+      {
+        src: "https://www.youtube.com/embed/X6QUnVPvIe0",
+        title: "Video 3 Title",
+        description: "A short project summary written for viewers who may know nothing about the background of the piece.",
+        background: "Use this space to explain why this film was made and what context inspired it.",
+        role: "Use this space to describe your role in planning, filming, editing, or directing.",
+        detail: "Use this space to share one memorable challenge, experiment, or fun behind-the-scenes detail.",
+      },
+      {
+        src: "https://www.youtube.com/embed/tcTpSjCfeXI",
+        title: "Video 4 Title",
+        description: "A short project summary written for viewers who may know nothing about the background of the piece.",
+        background: "Use this space to explain why this film was made and what context inspired it.",
+        role: "Use this space to describe your role in planning, filming, editing, or directing.",
+        detail: "Use this space to share one memorable challenge, experiment, or fun behind-the-scenes detail.",
+      },
     ]
   },
 
@@ -127,6 +162,11 @@ const SECTIONS = [
 export default function Home() {
   const [mounted, setMounted] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [activeEngineeringTab, setActiveEngineeringTab] = useState(0);
+  const [activeRoboticsTab, setActiveRoboticsTab] = useState(0);
+  const [activeMathTab, setActiveMathTab] = useState(0);
+  const [activeArticleTab, setActiveArticleTab] = useState(0);
+  const [activeVideoTab, setActiveVideoTab] = useState(0);
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -332,40 +372,60 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <div className="flex flex-col gap-8 relative">
-                  <nav className="hidden md:flex flex-col fixed top-1/2 -translate-y-1/2 left-4 z-50 p-2 bg-black/50 rounded-full shadow-lg">
-                    {section.videos && section.videos.map((video, videoIndex) => (
-                      <a
-                        key={videoIndex}
-                        href={`#filmmaking-video-${videoIndex}`}
-                        className="p-2 text-white hover:bg-white/20 rounded-full transition-colors duration-200"
-                        title={video.title}
-                      >
-                        {videoIndex + 1}
-                      </a>
-                    ))}
-                  </nav>
+                <div className="flex flex-wrap gap-3">
                   {section.videos && section.videos.map((video, videoIndex) => (
-                    <div
-                      key={videoIndex}
-                      id={`filmmaking-video-${videoIndex}`}
-                      className="flex flex-col items-center justify-center min-h-screen p-8 scroll-snap-align-start"
+                    <button
+                      key={video.title}
+                      type="button"
+                      onClick={() => setActiveVideoTab(videoIndex)}
+                      className={`rounded-full border px-4 py-2 text-sm transition ${
+                        activeVideoTab === videoIndex
+                          ? "border-black bg-black text-white dark:border-white dark:bg-white dark:text-black"
+                          : "border-black/10 bg-white text-black hover:bg-black/5 dark:border-white/10 dark:bg-black dark:text-white dark:hover:bg-white/5"
+                      }`}
                     >
-                      <p className="text-base text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-3xl text-center mb-4">
-                        {video.description}
-                      </p>
-                      <iframe
-                        src={video.src}
-                        title={video.title}
-                        className="w-full max-w-5xl aspect-video rounded-lg shadow-lg"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerPolicy="strict-origin-when-cross-origin"
-                        allowFullScreen
-                      />
-                      <h4 className="text-xl font-bold tracking-tighter mt-4">{video.title}</h4>
-                    </div>
+                      {video.title}
+                    </button>
                   ))}
                 </div>
+                {section.videos && (() => {
+                  const activeVideo = section.videos[activeVideoTab] ?? section.videos[0];
+                  return (
+                    <div className="mt-8 rounded-2xl border border-black/10 dark:border-white/10 bg-zinc-50 dark:bg-zinc-900/40 p-6 md:p-8">
+                      <h4 className="text-2xl font-bold tracking-tighter">{activeVideo.title}</h4>
+                      <p className="mt-4 max-w-3xl text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                        {activeVideo.description}
+                      </p>
+                      <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div className="rounded-xl bg-black/[0.03] dark:bg-white/[0.04] p-4">
+                          <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-40">Background</p>
+                          <p className="mt-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">{activeVideo.background}</p>
+                        </div>
+                        <div className="rounded-xl bg-black/[0.03] dark:bg-white/[0.04] p-4">
+                          <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-40">My Role</p>
+                          <p className="mt-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">{activeVideo.role}</p>
+                        </div>
+                        <div className="rounded-xl bg-black/[0.03] dark:bg-white/[0.04] p-4">
+                          <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-40">Memorable Detail</p>
+                          <p className="mt-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">{activeVideo.detail}</p>
+                        </div>
+                      </div>
+                      <div
+                        id={`filmmaking-video-${activeVideoTab}`}
+                        className="mt-8"
+                      >
+                        <iframe
+                          src={activeVideo.src}
+                          title={activeVideo.title}
+                          className="w-full max-w-5xl aspect-video rounded-lg shadow-lg"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerPolicy="strict-origin-when-cross-origin"
+                          allowFullScreen
+                        />
+                      </div>
+                    </div>
+                  );
+                })()}
               </>
             ) : section.id === "articles" ? (
               <>
@@ -380,33 +440,49 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <div className="flex flex-col gap-8 relative">
-                  <nav className="hidden md:flex flex-col fixed top-1/2 -translate-y-1/2 left-4 z-50 p-2 bg-black/50 rounded-full shadow-lg">
-                    {section.files && section.files.map((file, fileIndex) => (
-                      <a
-                        key={fileIndex}
-                        href={`#articles-file-${fileIndex}`}
-                        className="p-2 text-white hover:bg-white/20 rounded-full transition-colors duration-200"
-                        title={file.title}
-                      >
-                        {fileIndex + 1}
-                      </a>
-                    ))}
-                  </nav>
+                <div className="flex flex-wrap gap-3">
                   {section.files && section.files.map((file, fileIndex) => (
-                    <div
-                      key={fileIndex}
-                      id={`articles-file-${fileIndex}`}
-                      className="flex flex-col items-center justify-center min-h-screen p-8 scroll-snap-align-start"
+                    <button
+                      key={file.title}
+                      type="button"
+                      onClick={() => setActiveArticleTab(fileIndex)}
+                      className={`rounded-full border px-4 py-2 text-sm transition ${
+                        activeArticleTab === fileIndex
+                          ? "border-black bg-black text-white dark:border-white dark:bg-white dark:text-black"
+                          : "border-black/10 bg-white text-black hover:bg-black/5 dark:border-white/10 dark:bg-black dark:text-white dark:hover:bg-white/5"
+                      }`}
                     >
-                      <p className="text-base text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-3xl text-center mb-4">
-                        {file.description}
-                      </p>
-                      <iframe src={file.src} className="w-full max-w-5xl h-[70vh] rounded-lg shadow-lg" title={file.title}></iframe>
-                      <h4 className="text-xl font-bold tracking-tighter mt-4">{file.title}</h4>
-                    </div>
+                      {file.title}
+                    </button>
                   ))}
                 </div>
+                {section.files && (() => {
+                  const activeArticle = section.files[activeArticleTab] ?? section.files[0];
+                  return (
+                    <div
+                      id={`articles-file-${activeArticleTab}`}
+                      className="mt-8 rounded-2xl border border-black/10 dark:border-white/10 bg-zinc-50 dark:bg-zinc-900/40 p-6 md:p-8"
+                    >
+                      <h4 className="text-2xl font-bold tracking-tighter">{activeArticle.title}</h4>
+                      <p className="mt-4 max-w-3xl text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                        {activeArticle.description}
+                      </p>
+                      <div className="mt-6 rounded-xl bg-black/[0.03] dark:bg-white/[0.04] p-5">
+                        <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-40">Reader-Friendly Summary</p>
+                        <div className="mt-3 min-h-[5rem]" />
+                      </div>
+                      <a
+                        href={activeArticle.src}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mt-6 inline-flex items-center gap-2 rounded-full border border-black/10 px-4 py-2 text-sm transition hover:bg-black/5 dark:border-white/10 dark:hover:bg-white/5"
+                      >
+                        Read PDF
+                        <ArrowRight className="h-4 w-4" />
+                      </a>
+                    </div>
+                  );
+                })()}
               </>
             ) : section.id === "mathematics" ? (
               <>
@@ -421,19 +497,49 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <p className="text-lg text-zinc-500 dark:text-zinc-300 leading-relaxed min-h-[5rem]" />
-                <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
+                <div className="flex flex-wrap gap-3">
                   {section.notes && section.notes.map((note, noteIndex) => (
-                    <div
-                      key={noteIndex}
-                      id={`mathematics-note-${noteIndex}`}
-                      className="flex flex-col items-center justify-center p-4 md:p-5 border border-black/10 dark:border-white/10 rounded-lg"
+                    <button
+                      key={note.title}
+                      type="button"
+                      onClick={() => setActiveMathTab(noteIndex)}
+                      className={`rounded-full border px-4 py-2 text-sm transition ${
+                        activeMathTab === noteIndex
+                          ? "border-black bg-black text-white dark:border-white dark:bg-white dark:text-black"
+                          : "border-black/10 bg-white text-black hover:bg-black/5 dark:border-white/10 dark:bg-black dark:text-white dark:hover:bg-white/5"
+                      }`}
                     >
-                      <iframe src={note.src} className="w-full h-[75vh] lg:h-[85vh] rounded-lg shadow-lg" title={note.title}></iframe>
-                      <h4 className="text-xl font-bold tracking-tighter mt-4">{note.title}</h4>
-                    </div>
+                      {note.title}
+                    </button>
                   ))}
                 </div>
+                {section.notes && (() => {
+                  const activeNote = section.notes[activeMathTab] ?? section.notes[0];
+                  return (
+                    <div
+                      id={`mathematics-note-${activeMathTab}`}
+                      className="mt-8 rounded-2xl border border-black/10 dark:border-white/10 bg-zinc-50 dark:bg-zinc-900/40 p-6 md:p-8"
+                    >
+                      <h4 className="text-2xl font-bold tracking-tighter">{activeNote.title}</h4>
+                      <p className="mt-4 max-w-3xl text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                        {activeNote.summary}
+                      </p>
+                      <div className="mt-6 rounded-xl bg-black/[0.03] dark:bg-white/[0.04] p-5">
+                        <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-40">Explain This for a General Reader</p>
+                        <div className="mt-3 min-h-[5rem]" />
+                      </div>
+                      <a
+                        href={activeNote.src}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mt-6 inline-flex items-center gap-2 rounded-full border border-black/10 px-4 py-2 text-sm transition hover:bg-black/5 dark:border-white/10 dark:hover:bg-white/5"
+                      >
+                        Open Note
+                        <ArrowRight className="h-4 w-4" />
+                      </a>
+                    </div>
+                  );
+                })()}
               </>
             ) : section.id === "engineering" ? (
               <>
@@ -448,73 +554,106 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <div className="flex flex-col gap-8">
+                <div className="flex flex-wrap gap-3">
                   {section.sections && section.sections.map((engineeringSection, engineeringIndex) => (
-                    <div
-                      key={engineeringIndex}
-                      className="min-h-[20rem] rounded-2xl border border-black/10 dark:border-white/10 bg-zinc-50 dark:bg-zinc-900/40 p-8 flex flex-col justify-between"
+                    <button
+                      key={engineeringSection.title}
+                      type="button"
+                      onClick={() => setActiveEngineeringTab(engineeringIndex)}
+                      className={`rounded-full border px-4 py-2 text-sm transition ${
+                        activeEngineeringTab === engineeringIndex
+                          ? "border-black bg-black text-white dark:border-white dark:bg-white dark:text-black"
+                          : "border-black/10 bg-white text-black hover:bg-black/5 dark:border-white/10 dark:bg-black dark:text-white dark:hover:bg-white/5"
+                      }`}
                     >
-                      <div>
-                        <p className="text-xs font-bold uppercase tracking-[0.2em] opacity-40 mb-4">
-                          {String(engineeringIndex + 1).padStart(2, "0")}
-                        </p>
-                        <h4 className="text-2xl font-bold tracking-tighter mb-4">
-                          {engineeringSection.title}
-                        </h4>
-                        <p className="text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                          {engineeringSection.description}
-                        </p>
-                        {"honors" in engineeringSection && engineeringSection.honors && (
-                          <div className="mt-6 grid grid-cols-1 xl:grid-cols-2 gap-6">
-                            {engineeringSection.honors.map((honor) => (
-                              <div
-                                key={honor.title}
-                                className="rounded-xl border border-black/10 dark:border-white/10 p-4 md:p-5"
-                              >
-                                <h5 className="text-lg font-semibold tracking-tight mb-4">
-                                  {honor.title}
-                                </h5>
-                                <div className={`grid gap-4 ${honor.documents.length > 1 ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1"}`}>
-                                  {honor.documents.map((documentSrc, documentIndex) => (
-                                    <div key={documentSrc} className="rounded-xl border border-black/10 dark:border-white/10 p-3">
-                                      <iframe
-                                        src={documentSrc}
-                                        title={`${honor.title} document ${documentIndex + 1}`}
-                                        className="w-full h-[22rem] rounded-lg shadow-sm"
-                                      />
-                                      <div className="mt-3 rounded-lg bg-black/[0.03] dark:bg-white/[0.04] px-4 py-3">
-                                        <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-40">
-                                          Brief Description
-                                        </p>
-                                        <div className="mt-2 min-h-[3.5rem]" />
-                                      </div>
-                                    </div>
-                                  ))}
-                                </div>
+                      {engineeringSection.title}
+                    </button>
+                  ))}
+                </div>
+                {section.sections && (() => {
+                  const activeEngineeringSection = section.sections[activeEngineeringTab] ?? section.sections[0];
+                  return (
+                    <div className="mt-8 min-h-[20rem] rounded-2xl border border-black/10 dark:border-white/10 bg-zinc-50 dark:bg-zinc-900/40 p-8">
+                      <p className="text-xs font-bold uppercase tracking-[0.2em] opacity-40 mb-4">
+                        {String(activeEngineeringTab + 1).padStart(2, "0")}
+                      </p>
+                      <h4 className="text-2xl font-bold tracking-tighter mb-4">
+                        {activeEngineeringSection.title}
+                      </h4>
+                      <p className="text-base text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-3xl">
+                        {activeEngineeringSection.description}
+                      </p>
+                      {"honors" in activeEngineeringSection && activeEngineeringSection.honors && (
+                        <div className="mt-6 grid grid-cols-1 xl:grid-cols-2 gap-6">
+                          {activeEngineeringSection.honors.map((honor) => (
+                            <div
+                              key={honor.title}
+                              className="rounded-xl border border-black/10 dark:border-white/10 p-5"
+                            >
+                              <h5 className="text-lg font-semibold tracking-tight">{honor.title}</h5>
+                              <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+                                {honor.summary}
+                              </p>
+                              <div className="mt-5 flex flex-wrap gap-3">
+                                {honor.documents.map((documentSrc, documentIndex) => (
+                                  <a
+                                    key={documentSrc}
+                                    href={documentSrc}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="inline-flex items-center gap-2 rounded-full border border-black/10 px-4 py-2 text-sm transition hover:bg-black/5 dark:border-white/10 dark:hover:bg-white/5"
+                                  >
+                                    Supporting Document {documentIndex + 1}
+                                    <ArrowRight className="h-4 w-4" />
+                                  </a>
+                                ))}
                               </div>
+                              <div className="mt-5 rounded-lg bg-black/[0.03] dark:bg-white/[0.04] px-4 py-3">
+                                <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-40">
+                                  Brief Description for a General Reader
+                                </p>
+                                <div className="mt-2 min-h-[3.5rem]" />
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                      {"items" in activeEngineeringSection && activeEngineeringSection.items && (
+                        <div className="mt-6">
+                          <div className="flex flex-wrap gap-3">
+                            {activeEngineeringSection.items.map((item, itemIndex) => (
+                              <button
+                                key={item.title}
+                                type="button"
+                                onClick={() => setActiveRoboticsTab(itemIndex)}
+                                className={`rounded-full border px-4 py-2 text-sm transition ${
+                                  activeRoboticsTab === itemIndex
+                                    ? "border-black bg-black text-white dark:border-white dark:bg-white dark:text-black"
+                                    : "border-black/10 bg-white text-black hover:bg-black/5 dark:border-white/10 dark:bg-black dark:text-white dark:hover:bg-white/5"
+                                }`}
+                              >
+                                {item.title}
+                              </button>
                             ))}
                           </div>
-                        )}
-                        {"items" in engineeringSection && engineeringSection.items && (
-                          <div className="mt-6 space-y-3">
-                            {engineeringSection.items.map((item, itemIndex) => (
-                              <div
-                                key={item.title}
-                                className="rounded-xl border border-black/10 dark:border-white/10 px-4 py-4"
-                              >
-                                <p className="text-sm font-medium tracking-tight">
-                                  {itemIndex + 1}. {item.title}
+                          {(() => {
+                            const activeRobotProject = activeEngineeringSection.items[activeRoboticsTab] ?? activeEngineeringSection.items[0];
+                            return (
+                              <div className="mt-6 rounded-xl border border-black/10 dark:border-white/10 px-5 py-5">
+                                <h5 className="text-lg font-semibold tracking-tight">{activeRobotProject.title}</h5>
+                                <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+                                  {activeRobotProject.summary}
                                 </p>
-                                {item.images && (
-                                  <div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-3">
-                                    {item.images.map((imageSrc, imageIndex) => (
+                                {activeRobotProject.images && (
+                                  <div className="mt-5 grid grid-cols-2 md:grid-cols-3 gap-3">
+                                    {activeRobotProject.images.map((imageSrc, imageIndex) => (
                                       <div
                                         key={imageSrc}
                                         className="group relative aspect-[4/5] overflow-hidden rounded-xl"
                                       >
                                         <Image
                                           src={imageSrc}
-                                          alt={`${item.title} photo ${imageIndex + 1}`}
+                                          alt={`${activeRobotProject.title} photo ${imageIndex + 1}`}
                                           fill
                                           className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                                           sizes="(max-width: 768px) 50vw, 25vw"
@@ -523,62 +662,67 @@ export default function Home() {
                                     ))}
                                   </div>
                                 )}
-                                <div className="mt-4 min-h-[6rem] rounded-lg bg-black/[0.03] dark:bg-white/[0.04]" />
-                              </div>
-                            ))}
-                          </div>
-                        )}
-                        {"researchProjects" in engineeringSection && engineeringSection.researchProjects && (
-                          <div className="mt-6 grid grid-cols-1 xl:grid-cols-2 gap-6">
-                            {engineeringSection.researchProjects.map((project, projectIndex) => (
-                              <div
-                                key={project.title}
-                                className="rounded-xl border border-black/10 dark:border-white/10 p-4 md:p-5"
-                              >
-                                <p className="text-sm font-medium tracking-tight mb-4">
-                                  {projectIndex + 1}. {project.title}
-                                </p>
-                                {"document" in project && project.document && (
-                                  <iframe
-                                    src={project.document}
-                                    title={project.title}
-                                    className="w-full h-[24rem] rounded-lg shadow-sm"
-                                  />
-                                )}
-                                {"link" in project && project.link && (
-                                  <div>
-                                    <iframe
-                                      src={project.link.replace("/edit?usp=sharing", "/preview")}
-                                      title={project.title}
-                                      className="w-full h-[24rem] rounded-lg shadow-sm"
-                                    />
-                                    <a
-                                      href={project.link}
-                                      target="_blank"
-                                      rel="noreferrer"
-                                      className="mt-3 inline-flex text-sm font-medium underline underline-offset-4 hover:opacity-70"
-                                    >
-                                      Open in Google Docs
-                                    </a>
-                                  </div>
-                                )}
-                                <div className="mt-4 rounded-lg bg-black/[0.03] dark:bg-white/[0.04] px-4 py-3">
+                                <div className="mt-5 rounded-lg bg-black/[0.03] dark:bg-white/[0.04] px-4 py-3">
                                   <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-40">
-                                    Brief Description
+                                    Describe the Project in Plain Language
                                   </p>
-                                  <div className="mt-2 min-h-[4rem]" />
+                                  <div className="mt-2 min-h-[5rem]" />
                                 </div>
                               </div>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                      <p className="mt-8 text-sm uppercase tracking-[0.18em] opacity-35">
-                        Add content here
-                      </p>
+                            );
+                          })()}
+                        </div>
+                      )}
+                      {"researchProjects" in activeEngineeringSection && activeEngineeringSection.researchProjects && (
+                        <div className="mt-6 grid grid-cols-1 xl:grid-cols-2 gap-6">
+                          {activeEngineeringSection.researchProjects.map((project, projectIndex) => (
+                            <div
+                              key={project.title}
+                              className="rounded-xl border border-black/10 dark:border-white/10 p-5"
+                            >
+                              <p className="text-sm font-medium tracking-tight">
+                                {projectIndex + 1}. {project.title}
+                              </p>
+                              <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+                                {project.summary}
+                              </p>
+                              <div className="mt-5 flex flex-wrap gap-3">
+                                {"document" in project && project.document && (
+                                  <a
+                                    href={project.document}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="inline-flex items-center gap-2 rounded-full border border-black/10 px-4 py-2 text-sm transition hover:bg-black/5 dark:border-white/10 dark:hover:bg-white/5"
+                                  >
+                                    Open PDF
+                                    <ArrowRight className="h-4 w-4" />
+                                  </a>
+                                )}
+                                {"link" in project && project.link && (
+                                  <a
+                                    href={project.link}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="inline-flex items-center gap-2 rounded-full border border-black/10 px-4 py-2 text-sm transition hover:bg-black/5 dark:border-white/10 dark:hover:bg-white/5"
+                                  >
+                                    Open Research Document
+                                    <ArrowRight className="h-4 w-4" />
+                                  </a>
+                                )}
+                              </div>
+                              <div className="mt-5 rounded-lg bg-black/[0.03] dark:bg-white/[0.04] px-4 py-3">
+                                <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-40">
+                                  Brief Description for a General Reader
+                                </p>
+                                <div className="mt-2 min-h-[4rem]" />
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      )}
                     </div>
-                  ))}
-                </div>
+                  );
+                })()}
               </>
             ) : (
               <>
