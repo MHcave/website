@@ -348,8 +348,32 @@ export default function Home() {
       </section>
 
       {/* Categories Sections */}
-      <section className="py-32 px-8 md:px-16 space-y-32 scroll-smooth scroll-snap-type-y-mandatory">
-        {SECTIONS.map((section, index) => (
+      <section className="scroll-smooth scroll-snap-type-y-mandatory">
+        {SECTIONS.map((section, index) => {
+          const isDarkSection = index % 2 === 0;
+          const sectionBorderClass = isDarkSection ? "border-white/10" : "border-black/10";
+          const sectionMutedClass = isDarkSection ? "text-zinc-300" : "text-zinc-600";
+          const sectionBodyClass = isDarkSection ? "text-zinc-200" : "text-zinc-700";
+          const iconWrapperClass = isDarkSection
+            ? "p-3 bg-white text-black rounded-full"
+            : "p-3 bg-black text-white rounded-full";
+          const activeTabClass = isDarkSection
+            ? "border-white bg-white text-black"
+            : "border-black bg-black text-white";
+          const inactiveTabClass = isDarkSection
+            ? "border-white/15 bg-transparent text-white hover:bg-white/10"
+            : "border-black/10 bg-white text-black hover:bg-black/5";
+          const panelClass = isDarkSection
+            ? "rounded-2xl border border-white/10 bg-zinc-900/40"
+            : "rounded-2xl border border-black/10 bg-zinc-50";
+          const innerCardClass = isDarkSection
+            ? "rounded-xl border border-white/10"
+            : "rounded-xl border border-black/10";
+          const softBlockClass = isDarkSection
+            ? "rounded-xl bg-white/[0.06]"
+            : "rounded-xl bg-black/[0.03]";
+
+          return (
           <motion.div
             key={section.id}
             id={section.id}
@@ -357,17 +381,17 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: index * 0.1 }}
-            className={section.id === "filmmaking" || section.id === "articles" || section.id === "mathematics" || section.id === "engineering" ? "min-h-screen flex flex-col justify-center border-t border-black/10 dark:border-white/10 pt-16 scroll-snap-align-start" : "grid grid-cols-1 md:grid-cols-2 gap-16 items-start border-t border-black/10 dark:border-white/10 pt-16"}
+            className={`${section.id === "filmmaking" || section.id === "articles" || section.id === "mathematics" || section.id === "engineering" ? "min-h-screen flex flex-col justify-center pt-16 scroll-snap-align-start" : "grid grid-cols-1 md:grid-cols-2 gap-16 items-start pt-16"} px-8 md:px-16 py-24 border-t ${sectionBorderClass} ${isDarkSection ? "bg-black text-white" : "bg-white text-black"}`}
           >
             {section.id === "filmmaking" ? (
               <>
                 <div className="flex items-start gap-4 mb-8">
-                  <div className="p-3 bg-black text-white dark:bg-white dark:text-black rounded-full">
+                  <div className={iconWrapperClass}>
                     {section.icon}
                   </div>
                   <div>
                     <h3 className="text-4xl font-bold tracking-tighter uppercase mb-4">{section.title}</h3>
-                    <p className="text-xl text-zinc-600 dark:text-zinc-400 max-w-md leading-relaxed">
+                    <p className={`text-xl max-w-md leading-relaxed ${sectionMutedClass}`}>
                       {section.description}
                     </p>
                   </div>
@@ -378,10 +402,10 @@ export default function Home() {
                       key={video.title}
                       type="button"
                       onClick={() => setActiveVideoTab(videoIndex)}
-                      className={`rounded-full border px-4 py-2 text-sm transition ${
+                      className={`rounded-full border px-4 py-2 text-sm transition ${sectionBorderClass} ${
                         activeVideoTab === videoIndex
-                          ? "border-black bg-black text-white dark:border-white dark:bg-white dark:text-black"
-                          : "border-black/10 bg-white text-black hover:bg-black/5 dark:border-white/10 dark:bg-black dark:text-white dark:hover:bg-white/5"
+                          ? activeTabClass
+                          : inactiveTabClass
                       }`}
                     >
                       {video.title}
@@ -391,23 +415,23 @@ export default function Home() {
                 {section.videos && (() => {
                   const activeVideo = section.videos[activeVideoTab] ?? section.videos[0];
                   return (
-                    <div className="mt-8 rounded-2xl border border-black/10 dark:border-white/10 bg-zinc-50 dark:bg-zinc-900/40 p-6 md:p-8">
+                    <div className={`mt-8 ${panelClass} p-6 md:p-8`}>
                       <h4 className="text-2xl font-bold tracking-tighter">{activeVideo.title}</h4>
-                      <p className="mt-4 max-w-3xl text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                      <p className={`mt-4 max-w-3xl text-base leading-relaxed ${sectionMutedClass}`}>
                         {activeVideo.description}
                       </p>
                       <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div className="rounded-xl bg-black/[0.03] dark:bg-white/[0.04] p-4">
+                        <div className={`${softBlockClass} p-4`}>
                           <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-40">Background</p>
-                          <p className="mt-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">{activeVideo.background}</p>
+                          <p className={`mt-3 text-sm leading-relaxed ${sectionBodyClass}`}>{activeVideo.background}</p>
                         </div>
-                        <div className="rounded-xl bg-black/[0.03] dark:bg-white/[0.04] p-4">
+                        <div className={`${softBlockClass} p-4`}>
                           <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-40">My Role</p>
-                          <p className="mt-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">{activeVideo.role}</p>
+                          <p className={`mt-3 text-sm leading-relaxed ${sectionBodyClass}`}>{activeVideo.role}</p>
                         </div>
-                        <div className="rounded-xl bg-black/[0.03] dark:bg-white/[0.04] p-4">
+                        <div className={`${softBlockClass} p-4`}>
                           <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-40">Memorable Detail</p>
-                          <p className="mt-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">{activeVideo.detail}</p>
+                          <p className={`mt-3 text-sm leading-relaxed ${sectionBodyClass}`}>{activeVideo.detail}</p>
                         </div>
                       </div>
                       <div
@@ -430,12 +454,12 @@ export default function Home() {
             ) : section.id === "articles" ? (
               <>
                 <div className="flex items-start gap-4 mb-8">
-                  <div className="p-3 bg-black text-white dark:bg-white dark:text-black rounded-full">
+                  <div className={iconWrapperClass}>
                     {section.icon}
                   </div>
                   <div>
                     <h3 className="text-4xl font-bold tracking-tighter uppercase mb-4">{section.title}</h3>
-                    <p className="text-xl text-zinc-600 dark:text-zinc-400 max-w-md leading-relaxed">
+                    <p className={`text-xl max-w-md leading-relaxed ${sectionMutedClass}`}>
                       {section.description}
                     </p>
                   </div>
@@ -446,10 +470,10 @@ export default function Home() {
                       key={file.title}
                       type="button"
                       onClick={() => setActiveArticleTab(fileIndex)}
-                      className={`rounded-full border px-4 py-2 text-sm transition ${
+                      className={`rounded-full border px-4 py-2 text-sm transition ${sectionBorderClass} ${
                         activeArticleTab === fileIndex
-                          ? "border-black bg-black text-white dark:border-white dark:bg-white dark:text-black"
-                          : "border-black/10 bg-white text-black hover:bg-black/5 dark:border-white/10 dark:bg-black dark:text-white dark:hover:bg-white/5"
+                          ? activeTabClass
+                          : inactiveTabClass
                       }`}
                     >
                       {file.title}
@@ -461,13 +485,13 @@ export default function Home() {
                   return (
                     <div
                       id={`articles-file-${activeArticleTab}`}
-                      className="mt-8 rounded-2xl border border-black/10 dark:border-white/10 bg-zinc-50 dark:bg-zinc-900/40 p-6 md:p-8"
+                      className={`mt-8 ${panelClass} p-6 md:p-8`}
                     >
                       <h4 className="text-2xl font-bold tracking-tighter">{activeArticle.title}</h4>
-                      <p className="mt-4 max-w-3xl text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                      <p className={`mt-4 max-w-3xl text-base leading-relaxed ${sectionMutedClass}`}>
                         {activeArticle.description}
                       </p>
-                      <div className="mt-6 rounded-xl bg-black/[0.03] dark:bg-white/[0.04] p-5">
+                      <div className={`mt-6 ${softBlockClass} p-5`}>
                         <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-40">Reader-Friendly Summary</p>
                         <div className="mt-3 min-h-[5rem]" />
                       </div>
@@ -475,7 +499,7 @@ export default function Home() {
                         href={activeArticle.src}
                         target="_blank"
                         rel="noreferrer"
-                        className="mt-6 inline-flex items-center gap-2 rounded-full border border-black/10 px-4 py-2 text-sm transition hover:bg-black/5 dark:border-white/10 dark:hover:bg-white/5"
+                        className={`mt-6 inline-flex items-center gap-2 rounded-full border ${sectionBorderClass} px-4 py-2 text-sm transition ${isDarkSection ? "hover:bg-white/10" : "hover:bg-black/5"}`}
                       >
                         Read PDF
                         <ArrowRight className="h-4 w-4" />
@@ -487,12 +511,12 @@ export default function Home() {
             ) : section.id === "mathematics" ? (
               <>
                 <div className="flex items-start gap-4 mb-8">
-                  <div className="p-3 bg-black text-white dark:bg-white dark:text-black rounded-full">
+                  <div className={iconWrapperClass}>
                     {section.icon}
                   </div>
                   <div>
                     <h3 className="text-4xl font-bold tracking-tighter uppercase mb-4">{section.title}</h3>
-                    <p className="text-xl text-zinc-600 dark:text-zinc-400 max-w-md leading-relaxed">
+                    <p className={`text-xl max-w-md leading-relaxed ${sectionMutedClass}`}>
                       {section.description}
                     </p>
                   </div>
@@ -503,10 +527,10 @@ export default function Home() {
                       key={note.title}
                       type="button"
                       onClick={() => setActiveMathTab(noteIndex)}
-                      className={`rounded-full border px-4 py-2 text-sm transition ${
+                      className={`rounded-full border px-4 py-2 text-sm transition ${sectionBorderClass} ${
                         activeMathTab === noteIndex
-                          ? "border-black bg-black text-white dark:border-white dark:bg-white dark:text-black"
-                          : "border-black/10 bg-white text-black hover:bg-black/5 dark:border-white/10 dark:bg-black dark:text-white dark:hover:bg-white/5"
+                          ? activeTabClass
+                          : inactiveTabClass
                       }`}
                     >
                       {note.title}
@@ -518,13 +542,13 @@ export default function Home() {
                   return (
                     <div
                       id={`mathematics-note-${activeMathTab}`}
-                      className="mt-8 rounded-2xl border border-black/10 dark:border-white/10 bg-zinc-50 dark:bg-zinc-900/40 p-6 md:p-8"
+                      className={`mt-8 ${panelClass} p-6 md:p-8`}
                     >
                       <h4 className="text-2xl font-bold tracking-tighter">{activeNote.title}</h4>
-                      <p className="mt-4 max-w-3xl text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                      <p className={`mt-4 max-w-3xl text-base leading-relaxed ${sectionMutedClass}`}>
                         {activeNote.summary}
                       </p>
-                      <div className="mt-6 rounded-xl bg-black/[0.03] dark:bg-white/[0.04] p-5">
+                      <div className={`mt-6 ${softBlockClass} p-5`}>
                         <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-40">Explain This for a General Reader</p>
                         <div className="mt-3 min-h-[5rem]" />
                       </div>
@@ -532,7 +556,7 @@ export default function Home() {
                         href={activeNote.src}
                         target="_blank"
                         rel="noreferrer"
-                        className="mt-6 inline-flex items-center gap-2 rounded-full border border-black/10 px-4 py-2 text-sm transition hover:bg-black/5 dark:border-white/10 dark:hover:bg-white/5"
+                        className={`mt-6 inline-flex items-center gap-2 rounded-full border ${sectionBorderClass} px-4 py-2 text-sm transition ${isDarkSection ? "hover:bg-white/10" : "hover:bg-black/5"}`}
                       >
                         Open Note
                         <ArrowRight className="h-4 w-4" />
@@ -544,12 +568,12 @@ export default function Home() {
             ) : section.id === "engineering" ? (
               <>
                 <div className="flex items-start gap-4 mb-8">
-                  <div className="p-3 bg-black text-white dark:bg-white dark:text-black rounded-full">
+                  <div className={iconWrapperClass}>
                     {section.icon}
                   </div>
                   <div>
                     <h3 className="text-4xl font-bold tracking-tighter uppercase mb-4">{section.title}</h3>
-                    <p className="text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed">
+                    <p className={`text-xl max-w-2xl leading-relaxed ${sectionMutedClass}`}>
                       {section.description}
                     </p>
                   </div>
@@ -560,10 +584,10 @@ export default function Home() {
                       key={engineeringSection.title}
                       type="button"
                       onClick={() => setActiveEngineeringTab(engineeringIndex)}
-                      className={`rounded-full border px-4 py-2 text-sm transition ${
+                      className={`rounded-full border px-4 py-2 text-sm transition ${sectionBorderClass} ${
                         activeEngineeringTab === engineeringIndex
-                          ? "border-black bg-black text-white dark:border-white dark:bg-white dark:text-black"
-                          : "border-black/10 bg-white text-black hover:bg-black/5 dark:border-white/10 dark:bg-black dark:text-white dark:hover:bg-white/5"
+                          ? activeTabClass
+                          : inactiveTabClass
                       }`}
                     >
                       {engineeringSection.title}
@@ -573,14 +597,14 @@ export default function Home() {
                 {section.sections && (() => {
                   const activeEngineeringSection = section.sections[activeEngineeringTab] ?? section.sections[0];
                   return (
-                    <div className="mt-8 min-h-[20rem] rounded-2xl border border-black/10 dark:border-white/10 bg-zinc-50 dark:bg-zinc-900/40 p-8">
+                    <div className={`mt-8 min-h-[20rem] ${panelClass} p-8`}>
                       <p className="text-xs font-bold uppercase tracking-[0.2em] opacity-40 mb-4">
                         {String(activeEngineeringTab + 1).padStart(2, "0")}
                       </p>
                       <h4 className="text-2xl font-bold tracking-tighter mb-4">
                         {activeEngineeringSection.title}
                       </h4>
-                      <p className="text-base text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-3xl">
+                      <p className={`text-base leading-relaxed max-w-3xl ${sectionMutedClass}`}>
                         {activeEngineeringSection.description}
                       </p>
                       {"honors" in activeEngineeringSection && activeEngineeringSection.honors && (
@@ -588,10 +612,10 @@ export default function Home() {
                           {activeEngineeringSection.honors.map((honor) => (
                             <div
                               key={honor.title}
-                              className="rounded-xl border border-black/10 dark:border-white/10 p-5"
+                              className={`${innerCardClass} p-5`}
                             >
                               <h5 className="text-lg font-semibold tracking-tight">{honor.title}</h5>
-                              <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+                              <p className={`mt-3 text-sm leading-relaxed ${sectionMutedClass}`}>
                                 {honor.summary}
                               </p>
                               <div className="mt-5 flex flex-wrap gap-3">
@@ -601,14 +625,14 @@ export default function Home() {
                                     href={documentSrc}
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="inline-flex items-center gap-2 rounded-full border border-black/10 px-4 py-2 text-sm transition hover:bg-black/5 dark:border-white/10 dark:hover:bg-white/5"
+                                    className={`inline-flex items-center gap-2 rounded-full border ${sectionBorderClass} px-4 py-2 text-sm transition ${isDarkSection ? "hover:bg-white/10" : "hover:bg-black/5"}`}
                                   >
                                     Supporting Document {documentIndex + 1}
                                     <ArrowRight className="h-4 w-4" />
                                   </a>
                                 ))}
                               </div>
-                              <div className="mt-5 rounded-lg bg-black/[0.03] dark:bg-white/[0.04] px-4 py-3">
+                              <div className={`mt-5 ${softBlockClass} px-4 py-3`}>
                                 <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-40">
                                   Brief Description for a General Reader
                                 </p>
@@ -626,10 +650,10 @@ export default function Home() {
                                 key={item.title}
                                 type="button"
                                 onClick={() => setActiveRoboticsTab(itemIndex)}
-                                className={`rounded-full border px-4 py-2 text-sm transition ${
+                                className={`rounded-full border px-4 py-2 text-sm transition ${sectionBorderClass} ${
                                   activeRoboticsTab === itemIndex
-                                    ? "border-black bg-black text-white dark:border-white dark:bg-white dark:text-black"
-                                    : "border-black/10 bg-white text-black hover:bg-black/5 dark:border-white/10 dark:bg-black dark:text-white dark:hover:bg-white/5"
+                                    ? activeTabClass
+                                    : inactiveTabClass
                                 }`}
                               >
                                 {item.title}
@@ -639,9 +663,9 @@ export default function Home() {
                           {(() => {
                             const activeRobotProject = activeEngineeringSection.items[activeRoboticsTab] ?? activeEngineeringSection.items[0];
                             return (
-                              <div className="mt-6 rounded-xl border border-black/10 dark:border-white/10 px-5 py-5">
+                              <div className={`mt-6 ${innerCardClass} px-5 py-5`}>
                                 <h5 className="text-lg font-semibold tracking-tight">{activeRobotProject.title}</h5>
-                                <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+                                <p className={`mt-3 text-sm leading-relaxed ${sectionMutedClass}`}>
                                   {activeRobotProject.summary}
                                 </p>
                                 {activeRobotProject.images && (
@@ -662,7 +686,7 @@ export default function Home() {
                                     ))}
                                   </div>
                                 )}
-                                <div className="mt-5 rounded-lg bg-black/[0.03] dark:bg-white/[0.04] px-4 py-3">
+                                <div className={`mt-5 ${softBlockClass} px-4 py-3`}>
                                   <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-40">
                                     Describe the Project in Plain Language
                                   </p>
@@ -678,12 +702,12 @@ export default function Home() {
                           {activeEngineeringSection.researchProjects.map((project, projectIndex) => (
                             <div
                               key={project.title}
-                              className="rounded-xl border border-black/10 dark:border-white/10 p-5"
+                              className={`${innerCardClass} p-5`}
                             >
                               <p className="text-sm font-medium tracking-tight">
                                 {projectIndex + 1}. {project.title}
                               </p>
-                              <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+                              <p className={`mt-3 text-sm leading-relaxed ${sectionMutedClass}`}>
                                 {project.summary}
                               </p>
                               <div className="mt-5 flex flex-wrap gap-3">
@@ -692,7 +716,7 @@ export default function Home() {
                                     href={project.document}
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="inline-flex items-center gap-2 rounded-full border border-black/10 px-4 py-2 text-sm transition hover:bg-black/5 dark:border-white/10 dark:hover:bg-white/5"
+                                    className={`inline-flex items-center gap-2 rounded-full border ${sectionBorderClass} px-4 py-2 text-sm transition ${isDarkSection ? "hover:bg-white/10" : "hover:bg-black/5"}`}
                                   >
                                     Open PDF
                                     <ArrowRight className="h-4 w-4" />
@@ -703,14 +727,14 @@ export default function Home() {
                                     href={project.link}
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="inline-flex items-center gap-2 rounded-full border border-black/10 px-4 py-2 text-sm transition hover:bg-black/5 dark:border-white/10 dark:hover:bg-white/5"
+                                    className={`inline-flex items-center gap-2 rounded-full border ${sectionBorderClass} px-4 py-2 text-sm transition ${isDarkSection ? "hover:bg-white/10" : "hover:bg-black/5"}`}
                                   >
                                     Open Research Document
                                     <ArrowRight className="h-4 w-4" />
                                   </a>
                                 )}
                               </div>
-                              <div className="mt-5 rounded-lg bg-black/[0.03] dark:bg-white/[0.04] px-4 py-3">
+                              <div className={`mt-5 ${softBlockClass} px-4 py-3`}>
                                 <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-40">
                                   Brief Description for a General Reader
                                 </p>
@@ -743,7 +767,7 @@ export default function Home() {
               </>
             )}
           </motion.div>
-        ))}
+        )})}
       </section>
 
       {/* Horizontal Scroll Gallery */}
