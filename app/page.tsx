@@ -296,7 +296,7 @@ export default function Home() {
           <div className="max-w-4xl">
             <h2 className="text-5xl md:text-7xl font-semibold tracking-tight leading-tight">
               <span className="inline-block border-b border-white/60 pb-3">
-                Persistence, Ambition, Curiosity
+                Persistence, Humility, Curiosity
               </span>
             </h2>
             <p className="mt-4 text-base md:text-lg opacity-90">
