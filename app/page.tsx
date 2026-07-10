@@ -651,38 +651,40 @@ export default function Home() {
                         {activeEngineeringSection.description}
                       </p>
                       {"honors" in activeEngineeringSection && activeEngineeringSection.honors && (
-                        <div className="mt-6 grid grid-cols-1 xl:grid-cols-2 gap-6">
-                          {activeEngineeringSection.honors.map((honor) => (
-                            <div
-                              key={honor.title}
-                              className={`${innerCardClass} p-5`}
-                            >
-                              <h5 className="text-lg font-semibold tracking-tight">{honor.title}</h5>
-                              <p className={`mt-3 text-sm leading-relaxed ${sectionMutedClass}`}>
-                                {honor.summary}
-                              </p>
-                              <div className="mt-5 flex flex-wrap gap-3">
-                                {honor.documents.map((documentSrc, documentIndex) => (
-                                  <a
-                                    key={documentSrc}
-                                    href={documentSrc}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className={`inline-flex items-center gap-2 rounded-full border ${sectionBorderClass} px-4 py-2 text-sm transition ${isDarkSection ? "hover:bg-white/10" : "hover:bg-black/5"}`}
-                                  >
-                                    Supporting Document {documentIndex + 1}
-                                    <ArrowRight className="h-4 w-4" />
-                                  </a>
-                                ))}
-                              </div>
-                              <div className={`mt-5 ${softBlockClass} px-4 py-3`}>
-                                <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-40">
-                                  Brief Description for a General Reader
+                        <div className="mt-6">
+                          <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+                            {activeEngineeringSection.honors.map((honor) => (
+                              <div
+                                key={honor.title}
+                                className={`${innerCardClass} p-5`}
+                              >
+                                <h5 className="text-lg font-semibold tracking-tight">{honor.title}</h5>
+                                <p className={`mt-3 text-sm leading-relaxed ${sectionMutedClass}`}>
+                                  {honor.summary}
                                 </p>
-                                <div className="mt-2 min-h-[3.5rem]" />
+                                <div className="mt-5 flex flex-wrap gap-3">
+                                  {honor.documents.map((documentSrc, documentIndex) => (
+                                    <a
+                                      key={documentSrc}
+                                      href={documentSrc}
+                                      target="_blank"
+                                      rel="noreferrer"
+                                      className={`inline-flex items-center gap-2 rounded-full border ${sectionBorderClass} px-4 py-2 text-sm transition ${isDarkSection ? "hover:bg-white/10" : "hover:bg-black/5"}`}
+                                    >
+                                      Supporting Document {documentIndex + 1}
+                                      <ArrowRight className="h-4 w-4" />
+                                    </a>
+                                  ))}
+                                </div>
                               </div>
-                            </div>
-                          ))}
+                            ))}
+                          </div>
+                          <div className={`mt-6 ${softBlockClass} px-4 py-3`}>
+                            <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-40">
+                              Brief Description for a General Reader
+                            </p>
+                            <div className="mt-2 min-h-[3.5rem]" />
+                          </div>
                         </div>
                       )}
                       {"items" in activeEngineeringSection && activeEngineeringSection.items && (
