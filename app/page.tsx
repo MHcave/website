@@ -81,13 +81,9 @@ const SECTIONS = [
         document: "/Amphibious.pdf",
       },
       {
-        title: "EEG Machine Learning",
+        title: "EEG Machine Learning and Meditation VR",
         description: "A project focused on interpreting brain-signal data with machine learning in a way that is accessible and meaningful to a general audience.",
         link: "https://docs.google.com/document/d/1-pD5bhVVymJrBKz6nYygzYWdBbIQj1vyBOT-AdYG3x0/edit?usp=sharing",
-      },
-      {
-        title: "VR Application, Underwater Remote Control Vehicle",
-        description: "Space reserved for a project summary explaining the idea, the user experience, and how remote control and immersion connect in the design.",
       },
     ]
   },
