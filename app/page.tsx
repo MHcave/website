@@ -30,11 +30,11 @@ const SECTIONS = [
     sections: [
       {
         title: "Academic Accomplishment",
-        description: "Use this area to highlight coursework, awards, competitions, and milestones that reflect your engineering foundation.",
+        description: "",
         honors: [
           {
             title: "Conrad Alternate Finalist",
-            summary: "A recognition that highlights idea development, communication, and the ability to turn technical thinking into a compelling innovation story.",
+            summary: "",
             documents: [
               "/Conrad/Congratulations%20Conrad%20Alternate%20Finalist!.pdf",
               "/Conrad/ovBZdEXb.pdf",
@@ -42,7 +42,7 @@ const SECTIONS = [
           },
           {
             title: "Blue Ocean Top 500",
-            summary: "An achievement that reflects entrepreneurial thinking and the ability to shape a technical idea into a broader real-world opportunity.",
+            summary: "",
             documents: [
               "/Blue%20ocean.pdf",
             ],
@@ -647,9 +647,11 @@ export default function Home() {
                       <h4 className="text-2xl font-bold tracking-tighter mb-4">
                         {activeEngineeringSection.title}
                       </h4>
-                      <p className={`text-base leading-relaxed max-w-3xl ${sectionMutedClass}`}>
-                        {activeEngineeringSection.description}
-                      </p>
+                      {activeEngineeringSection.description && (
+                        <p className={`text-base leading-relaxed max-w-3xl ${sectionMutedClass}`}>
+                          {activeEngineeringSection.description}
+                        </p>
+                      )}
                       {"honors" in activeEngineeringSection && activeEngineeringSection.honors && (
                         <div className="mt-6">
                           <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
@@ -659,9 +661,11 @@ export default function Home() {
                                 className={`${innerCardClass} p-5`}
                               >
                                 <h5 className="text-lg font-semibold tracking-tight">{honor.title}</h5>
-                                <p className={`mt-3 text-sm leading-relaxed ${sectionMutedClass}`}>
-                                  {honor.summary}
-                                </p>
+                                {honor.summary && (
+                                  <p className={`mt-3 text-sm leading-relaxed ${sectionMutedClass}`}>
+                                    {honor.summary}
+                                  </p>
+                                )}
                                 <div className="mt-5 flex flex-wrap gap-3">
                                   {honor.documents.map((documentSrc, documentIndex) => (
                                     <a
