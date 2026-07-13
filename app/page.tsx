@@ -104,10 +104,10 @@ const SECTIONS = [
     icon: <BookOpen className="w-6 h-6" />, 
     description: "Writing on topics ranging from technical analysis to personal reflections on philosophy and design.",
     files: [
-      { src: "/articles/article1.pdf", title: "Article 1: The Future of AI", description: "A plain-language overview of how AI is evolving and why that matters beyond the technical world." },
-      { src: "/articles/article2.pdf", title: "Article 2: Quantum Computing Explained", description: "A simplified explanation of quantum computing designed for readers who are curious but not specialists." },
-      { src: "/articles/article3.pdf", title: "Article 3: Renewable Energy Solutions", description: "A reader-friendly look at how sustainable energy choices connect to real-world environmental challenges." },
-      { src: "/articles/article4.pdf", title: "Article 4: The Psychology of Design", description: "A reflection on how design shapes human attention, emotion, and everyday decision-making." },
+      { src: "/articles/article1.pdf", title: "The Cherry Blossoms", description: "A plain-language overview of how AI is evolving and why that matters beyond the technical world." },
+      { src: "/articles/article2.pdf", title: "Echoes of Heart Magazine", description: "A simplified explanation of quantum computing designed for readers who are curious but not specialists." },
+      { src: "/articles/article3.pdf", title: "The Impact of Atomic Bomb on the Expansion of American Imperialism", description: "A reader-friendly look at how sustainable energy choices connect to real-world environmental challenges." },
+      { src: "/articles/article4.pdf", title: "Space Exploration: The Obligation We can’t Defer", description: "A reflection on how design shapes human attention, emotion, and everyday decision-making." },
     ]
   },
   { 
