@@ -118,7 +118,7 @@ const SECTIONS = [
     videos: [
       {
         src: "https://www.youtube.com/embed/UCMLRu2iUjw",
-        title: "Video 1 Title",
+        title: "Procrastination",
         description: "A short project summary written for viewers who may know nothing about the background of the piece.",
         background: "Use this space to explain why this film was made and what context inspired it.",
         role: "Use this space to describe your role in planning, filming, editing, or directing.",
@@ -126,7 +126,7 @@ const SECTIONS = [
       },
       {
         src: "https://www.youtube.com/embed/fzGAYgGAnxg",
-        title: "Video 2 Title",
+        title: "Starboy",
         description: "A short project summary written for viewers who may know nothing about the background of the piece.",
         background: "Use this space to explain why this film was made and what context inspired it.",
         role: "Use this space to describe your role in planning, filming, editing, or directing.",
@@ -134,7 +134,7 @@ const SECTIONS = [
       },
       {
         src: "https://www.youtube.com/embed/X6QUnVPvIe0",
-        title: "Video 3 Title",
+        title: "Before I Got My Eyes Put Out",
         description: "A short project summary written for viewers who may know nothing about the background of the piece.",
         background: "Use this space to explain why this film was made and what context inspired it.",
         role: "Use this space to describe your role in planning, filming, editing, or directing.",
@@ -142,7 +142,7 @@ const SECTIONS = [
       },
       {
         src: "https://www.youtube.com/embed/tcTpSjCfeXI",
-        title: "Video 4 Title",
+        title: "From World to Webb",
         description: "A short project summary written for viewers who may know nothing about the background of the piece.",
         background: "Use this space to explain why this film was made and what context inspired it.",
         role: "Use this space to describe your role in planning, filming, editing, or directing.",
