@@ -21,6 +21,41 @@ const PROJECTS = [
   { id: 5, src: "/images/art5.jpg", alt: "Pencil sketch: books", title: "Pencil sketch: books" },
 ];
 
+const DAILY_PHOTOS = [
+  "/Daily/Screenshot 2026-07-16 at 5.28.59%E2%80%AFPM.png",
+  "/Daily/WechatIMG792.jpg",
+  "/Daily/WechatIMG793.jpg",
+  "/Daily/WechatIMG794.jpg",
+  "/Daily/WechatIMG795.jpg",
+  "/Daily/WechatIMG796.jpg",
+  "/Daily/WechatIMG797.jpg",
+  "/Daily/WechatIMG798.jpg",
+  "/Daily/WechatIMG799.jpg",
+  "/Daily/WechatIMG800.jpg",
+  "/Daily/WechatIMG801.jpg",
+  "/Daily/WechatIMG802.jpg",
+  "/Daily/WechatIMG803.jpg",
+  "/Daily/WechatIMG804.jpg",
+  "/Daily/WechatIMG805.jpg",
+  "/Daily/WechatIMG806.jpg",
+  "/Daily/WechatIMG807.jpg",
+  "/Daily/WechatIMG808.jpg",
+  "/Daily/WechatIMG809.jpg",
+  "/Daily/WechatIMG810.jpg",
+  "/Daily/WechatIMG811.jpg",
+  "/Daily/WechatIMG812.jpg",
+  "/Daily/WechatIMG813.jpg",
+  "/Daily/WechatIMG814.jpg",
+  "/Daily/WechatIMG815.jpg",
+];
+const ABOUT_ME_DISPLAYS = [
+  DAILY_PHOTOS.slice(0, 5),
+  DAILY_PHOTOS.slice(5, 10),
+  DAILY_PHOTOS.slice(10, 15),
+  DAILY_PHOTOS.slice(15, 20),
+  DAILY_PHOTOS.slice(20, 25),
+];
+
 const SECTIONS = [
   { 
     id: "engineering", 
@@ -165,12 +200,17 @@ export default function Home() {
   const [activeArticleTab, setActiveArticleTab] = useState(0);
   const [activeVideoTab, setActiveVideoTab] = useState(0);
 
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
+  const introductionGalleryRef = useRef<HTMLDivElement>(null);
+  const artGalleryRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress: introductionScrollProgress } = useScroll({
+    target: introductionGalleryRef,
+  });
+  const { scrollYProgress: artGalleryScrollProgress } = useScroll({
+    target: artGalleryRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-80%"]);
+  const introductionX = useTransform(introductionScrollProgress, [0, 1], ["0%", "-72%"]);
+  const artGalleryX = useTransform(artGalleryScrollProgress, [0, 1], ["0%", "-80%"]);
   const searchItems = [
     { label: "Home", href: "#top", category: "Page" },
     { label: "About Me", href: "#introduction", category: "Section" },
@@ -313,23 +353,68 @@ export default function Home() {
       {/* Introduction Section */}
       <section
         id="introduction"
-        className="min-h-screen flex flex-col justify-center px-8 md:px-16 py-32 border-b border-black/10 dark:border-white/10"
+        className="relative h-[300vh] border-b border-black/10 bg-white dark:border-white/10 dark:bg-black"
+        ref={introductionGalleryRef}
       >
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8 }}
-          className="max-w-3xl mx-auto text-center"
-        >
-          <h3 className="text-4xl font-bold tracking-tighter mb-8">About Me</h3>
-          <p className="text-base md:text-lg text-zinc-700 dark:text-zinc-200 leading-relaxed">
-            My name is Michael Huang, and I am a student at The Webb Schools, a private boarding school in Claremont, California. Throughout my life, I have been guided by three core values: persistence, curiosity, and humility. These are not only the principles I strive to uphold, but also the values my family has instilled in me from an early age.
-          </p>
-          <p className="mt-4 text-base md:text-lg text-zinc-700 dark:text-zinc-200 leading-relaxed">
-            As I have grown, these qualities have become intertwined with my passions and the person I aspire to become. My fascination with mathematics began in elementary school and has continued to grow ever since—what started as a love for solving challenging problems has evolved into a desire to understand the theories behind mathematics and explore its real-world applications.
-          </p>
-        </motion.div>
+        <div className="sticky top-0 flex h-screen items-center overflow-hidden px-8 md:px-16">
+          <motion.div
+            style={{ x: introductionX }}
+            className="pointer-events-none absolute inset-y-0 left-0 flex items-center gap-10 px-8 md:px-16"
+          >
+            {ABOUT_ME_DISPLAYS.map((display, displayIndex) => (
+              <div
+                key={`about-display-${displayIndex}`}
+                className="flex min-w-[82vw] max-w-[82vw] flex-col rounded-[2rem] border border-black/15 bg-white/68 p-4 shadow-[0_22px_80px_rgba(0,0,0,0.10)] backdrop-blur-sm dark:border-white/15 dark:bg-zinc-950/55 dark:shadow-[0_22px_80px_rgba(0,0,0,0.28)]"
+              >
+                <div className="grid flex-1 grid-cols-[1.15fr_0.85fr] gap-4">
+                  <div className="relative min-h-[58vh] overflow-hidden rounded-[1.5rem] bg-black/[0.04] shadow-[0_16px_40px_rgba(0,0,0,0.10)] dark:bg-white/[0.08]">
+                    <Image
+                      src={display[0]}
+                      alt=""
+                      fill
+                      sizes="(max-width: 768px) 100vw, 40vw"
+                      className="object-cover saturate-110 contrast-110 transition-transform duration-700"
+                      priority={displayIndex === 0}
+                    />
+                  </div>
+                  <div className="grid grid-cols-2 gap-4">
+                    {display.slice(1).map((src) => (
+                      <div
+                        key={src}
+                        className="relative min-h-[28vh] overflow-hidden rounded-[1.25rem] bg-black/[0.04] shadow-[0_14px_34px_rgba(0,0,0,0.10)] dark:bg-white/[0.08]"
+                      >
+                        <Image
+                          src={src}
+                          alt=""
+                          fill
+                          sizes="(max-width: 768px) 100vw, 20vw"
+                          className="object-cover saturate-110 contrast-110 transition-transform duration-700"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </motion.div>
+
+          <div className="pointer-events-none absolute inset-y-10 left-1/2 z-10 w-[min(88vw,60rem)] -translate-x-1/2 rounded-[2.5rem] bg-white/92 shadow-[0_0_80px_rgba(255,255,255,0.9)] backdrop-blur-[6px] dark:bg-black/88 dark:shadow-[0_0_80px_rgba(0,0,0,0.85)]" />
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+            className="relative z-20 mx-auto max-w-3xl text-center"
+          >
+            <h3 className="mb-8 text-4xl font-bold tracking-tighter">About Me</h3>
+            <p className="text-base leading-relaxed text-zinc-700 dark:text-zinc-200 md:text-lg">
+              My name is Michael Huang, and I am a student at The Webb Schools, a private boarding school in Claremont, California. Throughout my life, I have been guided by three core values: persistence, curiosity, and humility. These are not only the principles I strive to uphold, but also the values my family has instilled in me from an early age.
+            </p>
+            <p className="mt-4 text-base leading-relaxed text-zinc-700 dark:text-zinc-200 md:text-lg">
+              As I have grown, these qualities have become intertwined with my passions and the person I aspire to become. My fascination with mathematics began in elementary school and has continued to grow ever since—what started as a love for solving challenging problems has evolved into a desire to understand the theories behind mathematics and explore its real-world applications.
+            </p>
+          </motion.div>
+        </div>
       </section>
 
       {/* Categories Sections */}
@@ -857,10 +942,10 @@ export default function Home() {
       <section
         id="art-gallery"
         className="relative h-[300vh] bg-black text-white dark:bg-white dark:text-black"
-        ref={containerRef}
+        ref={artGalleryRef}
       >
         <div className="sticky top-0 h-screen flex items-center overflow-hidden">
-          <motion.div style={{ x }} className="flex gap-12 px-16">
+          <motion.div style={{ x: artGalleryX }} className="flex gap-12 px-16">
             <div className="flex flex-col justify-center min-w-[52vw] pr-10">
               <h3 className="text-4xl font-bold tracking-tighter">Art Gallery</h3>
               <div className="mt-8 max-w-3xl space-y-6 text-base md:text-lg leading-8 text-zinc-300 dark:text-zinc-700">
@@ -880,7 +965,7 @@ export default function Home() {
               </div>
             </div>
             {PROJECTS.map((project) => (
-              <motion.div 
+              <motion.div
                 key={project.id}
                 className="relative min-w-[50vw] h-[70vh] group bg-zinc-50 dark:bg-zinc-900/30"
               >
@@ -889,15 +974,9 @@ export default function Home() {
                   alt={project.alt}
                   fill
                   className="object-contain transition-transform duration-700 group-hover:scale-[1.02]"
-                  sizes="(max-w-768px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   priority={project.id <= 2}
                 />
-                <div className="absolute inset-x-0 bottom-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-8">
-                  <div className="text-white bg-black/70 p-4 rounded">
-                    <p className="text-[10px] font-bold tracking-[0.2em] uppercase mb-1 opacity-80">Art {project.id}</p>
-                    <h4 className="text-2xl font-bold tracking-tighter">{project.title}</h4>
-                  </div>
-                </div>
               </motion.div>
             ))}
           </motion.div>
