@@ -865,13 +865,13 @@ export default function Home() {
               <h3 className="text-4xl font-bold tracking-tighter">Art Gallery</h3>
               <div className="mt-8 max-w-3xl space-y-6 text-base md:text-lg leading-8 opacity-60">
                 <p>
-                  Art is my refuge—a space where I can slow down, reflect, and express myself beyond words. Appreciating the work of other artists encourages me to observe carefully, notice subtle details, and consider the emotions and ideas they seek to communicate. Creating art, in turn, allows me to transform my own thoughts and experiences into tangible forms while providing a sense of calm and fulfillment.
+                  Art is my refuge—a place to slow down, reflect, and express myself beyond words. It helps me notice small details and translate thoughts and experiences into something tangible.
                 </p>
                 <p>
-                  Each artistic medium offers a unique way of thinking. Through paper sculpture, I enjoy exploring the versatility of paper and turning simple materials into three-dimensional creations. Collage challenges me to develop a central idea and communicate it through the thoughtful arrangement of diverse materials. Pencil sketching has taught me patience and careful observation, encouraging me to appreciate the smallest details that might otherwise go unnoticed.
+                  Each medium shapes how I think: paper sculpture turns simple materials into 3D forms, collage communicates an idea through arrangement, and pencil sketching builds patience and careful observation.
                 </p>
                 <p>
-                  More than a creative outlet, art has become a form of meditation. It reminds me to slow down, remain present, and appreciate the beauty found in careful observation and thoughtful creation.
+                  More than a creative outlet, art feels like meditation—it keeps me present and reminds me to appreciate the beauty in careful observation and thoughtful creation.
                 </p>
               </div>
               <div className="mt-8 flex items-center gap-2">
