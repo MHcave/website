@@ -373,7 +373,7 @@ export default function Home() {
                       alt=""
                       fill
                       sizes="(max-width: 768px) 100vw, 40vw"
-                      className="object-cover saturate-110 contrast-110 transition-transform duration-700"
+                      className="object-contain p-3 saturate-110 contrast-110 transition-transform duration-700"
                       priority={displayIndex === 0}
                     />
                   </div>
@@ -388,7 +388,7 @@ export default function Home() {
                           alt=""
                           fill
                           sizes="(max-width: 768px) 100vw, 20vw"
-                          className="object-cover saturate-110 contrast-110 transition-transform duration-700"
+                          className="object-contain p-2 saturate-110 contrast-110 transition-transform duration-700"
                         />
                       </div>
                     ))}
@@ -986,11 +986,10 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-32 px-8 md:px-16 border-t border-black/10 dark:border-white/10 text-center">
         <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-16">MICHAEL HUANG</h2>
-        <div className="flex flex-wrap justify-center gap-12 text-sm font-bold uppercase tracking-widest opacity-60">
-          <a href="#" className="hover:opacity-100 transition-opacity">Email</a>
-          <a href="#" className="hover:opacity-100 transition-opacity">LinkedIn</a>
-          <a href="#" className="hover:opacity-100 transition-opacity">Twitter</a>
-          <a href="#" className="hover:opacity-100 transition-opacity">Instagram</a>
+        <div className="flex justify-center text-sm font-bold tracking-widest opacity-60">
+          <a href="mailto:michuang62@gmail.com" className="hover:opacity-100 transition-opacity">
+            michuang62@gmail.com
+          </a>
         </div>
         <p className="mt-32 text-xs opacity-30 uppercase tracking-widest">
           © {new Date().getFullYear()} Michael Huang. All rights reserved.
