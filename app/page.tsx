@@ -282,6 +282,9 @@ export default function Home() {
             <a href="#top" className="hover:opacity-60 transition-opacity">
               Home
             </a>
+            <a href="#introduction" className="hover:opacity-60 transition-opacity">
+              Intro
+            </a>
             {SECTIONS.map((section) => (
               <a
                 key={section.id}
