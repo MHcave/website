@@ -323,10 +323,10 @@ export default function Home() {
           className="max-w-3xl mx-auto text-center"
         >
           <h3 className="text-4xl font-bold tracking-tighter mb-8">About Me</h3>
-          <p className="text-xl text-zinc-600 dark:text-zinc-400 leading-relaxed">
+          <p className="text-base md:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
             My name is Michael Huang, and I am a student at The Webb Schools, a private boarding school in Claremont, California. Throughout my life, I have been guided by three core values: persistence, curiosity, and humility. These are not only the principles I strive to uphold, but also the values my family has instilled in me from an early age.
           </p>
-          <p className="mt-4 text-lg text-zinc-500 dark:text-zinc-300 leading-relaxed">
+          <p className="mt-4 text-base md:text-lg text-zinc-500 dark:text-zinc-300 leading-relaxed">
             As I have grown, these qualities have become intertwined with my passions and the person I aspire to become. My fascination with mathematics began in elementary school and has continued to grow ever since—what started as a love for solving challenging problems has evolved into a desire to understand the theories behind mathematics and explore its real-world applications.
           </p>
         </motion.div>
@@ -382,7 +382,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="text-4xl font-bold tracking-tighter uppercase mb-4">{section.title}</h3>
-                    <p className={`text-xl max-w-md leading-relaxed ${sectionMutedClass}`}>
+                    <p className={`text-base md:text-lg max-w-md leading-relaxed ${sectionMutedClass}`}>
                       {section.description}
                     </p>
                   </div>
@@ -464,7 +464,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="text-4xl font-bold tracking-tighter uppercase mb-4">{section.title}</h3>
-                    <p className={`text-xl max-w-md leading-relaxed ${sectionMutedClass}`}>
+                    <p className={`text-base md:text-lg max-w-md leading-relaxed ${sectionMutedClass}`}>
                       {section.description}
                     </p>
                   </div>
@@ -537,7 +537,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="text-4xl font-bold tracking-tighter uppercase mb-4">{section.title}</h3>
-                    <p className={`text-xl max-w-md leading-relaxed ${sectionMutedClass}`}>
+                    <p className={`text-base md:text-lg max-w-md leading-relaxed ${sectionMutedClass}`}>
                       {section.description}
                     </p>
                     <p className={`mt-4 text-base leading-relaxed ${sectionBodyClass}`}>
@@ -613,7 +613,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="text-4xl font-bold tracking-tighter uppercase mb-4">{section.title}</h3>
-                    <p className={`text-xl max-w-2xl leading-relaxed ${sectionMutedClass}`}>
+                    <p className={`text-base md:text-lg max-w-2xl leading-relaxed ${sectionMutedClass}`}>
                       {section.description}
                     </p>
                   </div>
@@ -839,7 +839,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="text-4xl font-bold tracking-tighter uppercase mb-4">{section.title}</h3>
-                    <p className="text-xl text-zinc-600 dark:text-zinc-400 max-w-md leading-relaxed">
+                    <p className="text-base md:text-lg text-zinc-600 dark:text-zinc-400 max-w-md leading-relaxed">
                       {section.description}
                     </p>
                   </div>
