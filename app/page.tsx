@@ -14,11 +14,11 @@ import {
 } from "lucide-react";
 
 const PROJECTS = [
-  { id: 1, src: "/images/art1.jpg", alt: "Street Scene Sketch", title: "Paper Sculpture: Cones and Cubes" },
-  { id: 2, src: "/images/art2.jpg", alt: "Bottle Study", title: "Scenery: Alamo Dorm Scene" },
-  { id: 3, src: "/images/art3.jpg", alt: "Still Life Composition", title: "Collage: Orbits of the unseen" },
-  { id: 4, src: "/images/art4.jpg", alt: "Abstract Paper Sculpture", title: "Pencil sketch: water bottle" },
-  { id: 5, src: "/images/art5.jpg", alt: "Engineering Marble Run", title: "Pencil sketch: books" },
+  { id: 1, src: "/images/art1.jpg", alt: "Paper Sculpture: Cones and Cubes", title: "Paper Sculpture: Cones and Cubes" },
+  { id: 2, src: "/images/art2.jpg", alt: "Scenery: Alamo Dorm Scene", title: "Scenery: Alamo Dorm Scene" },
+  { id: 3, src: "/images/art3.jpg", alt: "Collage: Orbits of the unseen", title: "Collage: Orbits of the unseen" },
+  { id: 4, src: "/images/art4.jpg", alt: "Pencil sketch: water bottle", title: "Pencil sketch: water bottle" },
+  { id: 5, src: "/images/art5.jpg", alt: "Pencil sketch: books", title: "Pencil sketch: books" },
 ];
 
 const SECTIONS = [
@@ -863,9 +863,17 @@ export default function Home() {
           <motion.div style={{ x }} className="flex gap-12 px-16">
             <div className="flex flex-col justify-center min-w-[52vw] pr-10">
               <h3 className="text-4xl font-bold tracking-tighter">Art Gallery</h3>
-              <p className="mt-8 max-w-3xl text-base md:text-lg leading-9 opacity-60">
-                A collection of sketches and sculptures exploring form, light, and motion.
-              </p>
+              <div className="mt-8 max-w-3xl space-y-6 text-base md:text-lg leading-8 opacity-60">
+                <p>
+                  Art is my refuge—a space where I can slow down, reflect, and express myself beyond words. Appreciating the work of other artists encourages me to observe carefully, notice subtle details, and consider the emotions and ideas they seek to communicate. Creating art, in turn, allows me to transform my own thoughts and experiences into tangible forms while providing a sense of calm and fulfillment.
+                </p>
+                <p>
+                  Each artistic medium offers a unique way of thinking. Through paper sculpture, I enjoy exploring the versatility of paper and turning simple materials into three-dimensional creations. Collage challenges me to develop a central idea and communicate it through the thoughtful arrangement of diverse materials. Pencil sketching has taught me patience and careful observation, encouraging me to appreciate the smallest details that might otherwise go unnoticed.
+                </p>
+                <p>
+                  More than a creative outlet, art has become a form of meditation. It reminds me to slow down, remain present, and appreciate the beauty found in careful observation and thoughtful creation.
+                </p>
+              </div>
               <div className="mt-8 flex items-center gap-2">
                 <span className="text-sm font-bold uppercase tracking-widest">Scroll to explore</span>
                 <ArrowRight className="w-4 h-4" />
