@@ -26,15 +26,16 @@ const SECTIONS = [
     id: "engineering", 
     title: "Engineering", 
     icon: <Lightbulb className="w-6 h-6" />, 
-    description: "Solving complex problems through design and implementation. My focus lies at the intersection of mechanical integrity and innovative systems.",
+    description: "Engineering captivates me because it transforms ideas into tangible solutions that can improve people’s lives. Every project challenges me to think critically, learn continuously, and persevere through setbacks.",
     sections: [
       {
         title: "Academic Accomplishment",
-        description: "",
+        description: "Throughout high school, I have participated in several engineering and entrepreneurship competitions, earning recognition in both the Conrad Challenge and the Blue Ocean Entrepreneurship Competition. My team was named an Alternate Finalist in the 2025–2026 Conrad Challenge and placed among the Top 500 teams in the Blue Ocean Competition. While these achievements are meaningful milestones, I value them most as reflections of the learning, collaboration, and perseverance that shaped my engineering journey.",
+        briefDescription: "For both competitions, my partner and I designed an intelligent optical fiber monitoring system capable of automatically detecting faults in fiber-optic communication networks. As modern data centers rely heavily on optical fiber infrastructure, identifying transmission failures often requires extensive manual inspection; even a single undetected fault can result in costly maintenance, service interruptions, or significant data loss.\n\nOur system continuously monitors the health of optical fiber connections, identifies abnormalities before failures occur, and alerts operators in advance—helping reduce maintenance costs while improving the reliability and security of data transmission. Within the team, I was primarily responsible for the mechanical design, circuit design, and hardware integration of the device.",
         honors: [
           {
             title: "Conrad Alternate Finalist",
-            summary: "",
+            summary: "Alternate Finalist in the 2025–2026 Conrad Challenge.",
             documents: [
               "/Conrad/Congratulations%20Conrad%20Alternate%20Finalist!.pdf",
               "/Conrad/ovBZdEXb.pdf",
@@ -42,7 +43,7 @@ const SECTIONS = [
           },
           {
             title: "Blue Ocean Top 500",
-            summary: "",
+            summary: "Top 500 team in the Blue Ocean Entrepreneurship Competition.",
             documents: [
               "/Blue%20ocean.pdf",
             ],
@@ -51,11 +52,12 @@ const SECTIONS = [
       },
       {
         title: "Robotics",
-        description: "Use this section to showcase robot builds, team contributions, design iterations, and technical problem-solving.",
+        description: "Robotics is where my passion for engineering truly began. I joined my school’s FTC robotics team during my freshman year, initially contributing to programming, structural design, and robot assembly. During the 2025–2026 season, I was honored to serve as the captain of FTC Team 19888.",
         items: [
           {
             title: "2025-2026 Season",
-            summary: "A visual record of building, testing, collaborating, and refining the robot through the season.",
+            summary: "The following photographs document the design, construction, and competition highlights of our FTC robot for the 2025–2026 season. Designed for the FTC game, the robot was built to efficiently collect and launch game elements while remaining reliable throughout competition.",
+            plainLanguage: "Because our team operated with a limited budget, much of the robot’s structure was constructed from reinforced cardboard—demonstrating that creativity and thoughtful engineering can often compensate for limited resources.",
             images: [
               "/2025-2026/WechatIMG732.jpg",
               "/2025-2026/WechatIMG737.jpg",
@@ -77,13 +79,15 @@ const SECTIONS = [
       },
       {
         title: "Beaver Amphibious Robotics",
-        description: "A research direction exploring a bio-inspired robotic system and how mobility across different environments can inform engineering design.",
+        description: "Inspired by my experiences in FTC robotics, I wanted to pursue an engineering challenge beyond the classroom. I discovered that amphibious robots remain relatively underdeveloped despite their potential applications in environmental monitoring, search-and-rescue missions, and transportation across complex terrain. Motivated by this opportunity, I began designing my own bio-inspired amphibious robot.",
         document: "/Amphibious.pdf",
+        briefDescription: "This project is documented in a separate technical paper that details its design concept, hardware architecture, reinforcement learning framework, and development progress.\n\nThe robot draws inspiration from the beaver—an amphibious mammal adapted to both land and water. Its broad, webbed feet and flat tail informed the robot’s mechanical design. To enable versatile locomotion, I employed reinforcement learning to train the robot to swim, walk, and run across diverse environments.",
       },
       {
         title: "EEG Machine Learning and Meditation VR",
         description: "A project focused on interpreting brain-signal data with machine learning in a way that is accessible and meaningful to a general audience.",
         link: "https://docs.google.com/document/d/1-pD5bhVVymJrBKz6nYygzYWdBbIQj1vyBOT-AdYG3x0/edit?usp=sharing",
+        briefDescription: "",
       },
     ]
   },
@@ -91,62 +95,62 @@ const SECTIONS = [
     id: "mathematics", 
     title: "Mathematics", 
     icon: <Sigma className="w-6 h-6" />, 
-    description: "Exploring the elegance of numbers and structural patterns. From abstract proofs to applied models, mathematics forms the foundation of my logical reasoning.",
+    description: "Mathematics was the first subject that truly fascinated me. It continually challenges my thinking while rewarding me with the satisfaction of discovering elegant solutions. I also enjoy documenting what I learn using my own explanations, diagrams, and examples.",
     notes: [
-      { src: "/Notes/HPC.pdf", title: "HPC", summary: "A note set that reflects advanced problem-solving and structured mathematical reasoning." },
-      { src: "/Notes/calc%201.pdf", title: "Calc 1", summary: "A note set focused on the fundamentals of calculus and the way change can be modeled precisely." },
-      { src: "/Notes/Calc%202.pdf", title: "Calc 2", summary: "A continuation into deeper calculus ideas, emphasizing technique, interpretation, and mathematical persistence." },
+      { src: "/Notes/HPC.pdf", title: "Honors Precalculus", summary: "These notes summarize the fundamental topics of precalculus, including functions, algebra, trigonometry, vectors, conic sections, sequences, matrices, and combinatorics. They emphasize both conceptual understanding and analytical problem-solving while providing a strong mathematical foundation for calculus and advanced STEM coursework.", explanation: "These study guides were generated by AI based on my handwritten notes from the mathematics courses I have completed." },
+      { src: "/Notes/calc%201.pdf", title: "Calculus I", summary: "These notes cover the core principles of differential and integral calculus, including limits, continuity, derivatives, techniques of integration, differential equations, parametric and polar functions, and infinite series. They emphasize mathematical reasoning and real-world applications while developing the analytical thinking required for advanced studies in quantitative disciplines.", explanation: "These study guides were generated by AI based on my handwritten notes from the mathematics courses I have completed." },
+      { src: "/Notes/Calc%202.pdf", title: "Calculus II", summary: "These notes build upon the foundations of Calculus I by exploring advanced integration techniques, differential equations, parametric and polar curves, conic sections, sequences, and power series. Together, they strengthen problem-solving skills and prepare students for higher-level coursework in STEM fields.", explanation: "These study guides were generated by AI based on my handwritten notes from the mathematics courses I have completed." },
     ]
   },
   { 
     id: "articles", 
     title: "Articles", 
     icon: <BookOpen className="w-6 h-6" />, 
-    description: "Writing on topics ranging from technical analysis to personal reflections on philosophy and design.",
+    description: "Writing is one of the ways I make sense of my experiences and express my authentic thoughts. Through writing, I preserve meaningful memories, explore ideas that spark my curiosity, and communicate the insights I gain from independent research.",
     files: [
-      { src: "/articles/article1.pdf", title: "The Cherry Blossoms", description: "A plain-language overview of how AI is evolving and why that matters beyond the technical world." },
-      { src: "/articles/article2.pdf", title: "Echoes of Heart Magazine", description: "A simplified explanation of quantum computing designed for readers who are curious but not specialists." },
-      { src: "/articles/article3.pdf", title: "The Impact of Atomic Bomb on the Expansion of American Imperialism", description: "A reader-friendly look at how sustainable energy choices connect to real-world environmental challenges." },
-      { src: "/articles/article4.pdf", title: "Space Exploration: The Obligation We can’t Defer", description: "A reflection on how design shapes human attention, emotion, and everyday decision-making." },
+      { src: "/articles/article1.pdf", title: "The Cherry Blossoms", description: "This descriptive narrative follows a young man trapped in the monotony of daily life who has gradually lost his sense of purpose. While wandering beneath blooming cherry blossoms, he observes the joy and beauty around him, prompting him to reflect on the meaningful moments he has overlooked.", summary: "A descriptive narrative about rediscovering meaning by noticing beauty, joy, and the small moments that are easy to miss." },
+      { src: "/articles/article2.pdf", title: "Echoes of Heart Magazine", description: "Inspired by The Great Gatsby, this literary magazine investigates the multifaceted nature of love through a collection of interconnected writing forms, including free-verse poetry, reflective prose, a manifesto, a fictional newspaper article, and an epistolary letter.", summary: "A themed literary magazine that explores love through multiple genres and perspectives, from longing and illusion to self-love and obsession." },
+      { src: "/articles/article3.pdf", title: "The Impact of Atomic Bomb on the Expansion of American Imperialism", description: "This research paper argues that the atomic bomb not only concluded World War II but also reshaped the global balance of power by accelerating the expansion of American imperialism. It examines how nuclear superiority strengthened U.S. technological leadership, diplomatic influence, and postwar institutions.", summary: "A historical research paper connecting nuclear power after WWII to U.S. influence, alliances, and the structure of postwar international order." },
+      { src: "/articles/article4.pdf", title: "Space Exploration: The Obligation We can’t Defer", description: "This argumentative essay contends that the value of space exploration depends on the timescale from which it is evaluated: what appears to be an extravagant expense for one generation becomes a civilizational obligation across centuries. The essay weighs costs against long-term scientific, economic, and philosophical value.", summary: "An argument that space exploration is a long-term responsibility, with benefits that unfold across generations through knowledge, innovation, and perspective." },
     ]
   },
   { 
     id: "filmmaking", 
     title: "Filmmaking", 
     icon: <Film className="w-6 h-6" />, 
-    description: "Telling stories through motion and light. I explore visual narratives that challenge perspectives and evoke emotional responses.",
+    description: "I started learning filmmaking in my high school freshman year. Through filmmaking, I learned how to film cinematic videos and edit clips into high-quality pieces. My projects span PSAs, music, narratives, and documentaries.",
     videos: [
       {
         src: "https://www.youtube.com/embed/UCMLRu2iUjw",
         title: "Procrastination",
-        description: "A short project summary written for viewers who may know nothing about the background of the piece.",
-        background: "Use this space to explain why this film was made and what context inspired it.",
-        role: "Use this space to describe your role in planning, filming, editing, or directing.",
-        detail: "Use this space to share one memorable challenge, experiment, or fun behind-the-scenes detail.",
+        description: "Procrastination is a short PSA-style film that examines how delay can quietly grow from a small habit into a major source of stress. The piece follows the emotional pattern many of my peers know well: putting something off, feeling temporary relief, losing track of time, and then facing the pressure of an approaching deadline. Instead of treating procrastination as just laziness, the film presents it as a cycle of avoidance, distraction, guilt, and urgency.",
+        background: "I wanted to make a film about a problem that feels ordinary but affects daily life in a serious way. Procrastination is something many people experience, especially in school, but it is often dismissed as a minor bad habit rather than a real struggle with focus, motivation, and self-discipline. This project was meant to make that experience visible in a way that was honest, recognizable, and easy for a broad audience to connect with.",
+        role: "I helped develop the concept, think through how the message should be communicated visually, and shape the sequence of scenes so the film would feel clear and relatable. I was also responsible for filming and editing, paying close attention to pacing, transitions, and shot order. My goal was to make the viewer feel the growing pressure of procrastination, not just understand it intellectually.",
+        detail: "One memorable part of the project was using editing rhythm to mirror the mental experience of putting work off. Early moments could feel slower or more casual, while later cuts and transitions created a stronger sense of urgency and tension. It was interesting to see how simple choices in timing and structure could make a very familiar situation feel more emotionally immediate.",
       },
       {
         src: "https://www.youtube.com/embed/fzGAYgGAnxg",
         title: "Starboy",
-        description: "A short project summary written for viewers who may know nothing about the background of the piece.",
-        background: "Use this space to explain why this film was made and what context inspired it.",
-        role: "Use this space to describe your role in planning, filming, editing, or directing.",
-        detail: "Use this space to share one memorable challenge, experiment, or fun behind-the-scenes detail.",
+        description: "Starboy is a music-centered short film that focuses on atmosphere, rhythm, and visual energy. Rather than depending primarily on dialogue or direct explanation, the piece uses image, movement, and editing to respond to the tone of the music. The result is a film that aims to feel expressive and stylized, with each shot helping build a larger mood rather than simply documenting events.",
+        background: "This project gave me the chance to explore how filmmaking can be driven by sound and feeling. I was interested in how music can shape the viewer’s emotional response and influence the pace of a scene even before any story details are fully understood. Instead of making something purely narrative, I wanted to experiment with a piece where tone, rhythm, and visual style played the central role.",
+        role: "I contributed to the planning of the visual direction, the selection and filming of shots, and the editing process that brought the piece together. A large part of my role involved thinking about synchronization: how cuts, movement, and visual emphasis could align with the music so the final film felt cohesive. I also paid attention to how each shot contributed to the overall tone rather than standing alone.",
+        detail: "A particularly interesting challenge was making sure the visuals felt dynamic without becoming chaotic. Because music-based editing can easily become repetitive or overly fast, I had to think carefully about variation in shot length, transitions, and visual intensity. That balance between energy and clarity became one of the most important creative decisions in the project.",
       },
       {
         src: "https://www.youtube.com/embed/X6QUnVPvIe0",
         title: "Before I Got My Eyes Put Out",
-        description: "A short project summary written for viewers who may know nothing about the background of the piece.",
-        background: "Use this space to explain why this film was made and what context inspired it.",
-        role: "Use this space to describe your role in planning, filming, editing, or directing.",
-        detail: "Use this space to share one memorable challenge, experiment, or fun behind-the-scenes detail.",
+        description: "Before I Got My Eyes Put Out is a short film with a more reflective and emotionally interpretive tone. The title itself invites curiosity, and the piece relies on mood, visual composition, and pacing to create meaning rather than spelling everything out directly. It is designed to feel more introspective than explanatory, encouraging the audience to respond emotionally and think about the images for themselves.",
+        background: "I approached this project as an opportunity to explore a more poetic side of filmmaking. Rather than building the film around a straightforward message, I wanted it to create an atmosphere that felt personal, thoughtful, and slightly unsettling in a meaningful way. The focus was less on giving the viewer one fixed interpretation and more on allowing the piece to suggest emotion, memory, and vulnerability through visual storytelling.",
+        role: "I helped shape the concept and visual approach of the film, including how the imagery, framing, and pacing would support the overall tone. I also worked on filming and editing, where much of the emotional effect of the piece was actually created. My role involved making decisions about what to show, what to leave ambiguous, and how long each moment should last in order to preserve the reflective quality of the film.",
+        detail: "One of the most memorable parts of the project was realizing how strongly mood depends on restraint. In a piece like this, small changes in timing, framing, or sequence can completely alter the emotional effect. It was rewarding to see how a quieter, less direct filmmaking style could still communicate something powerful when the visuals and pacing were handled carefully.",
       },
       {
         src: "https://www.youtube.com/embed/tcTpSjCfeXI",
         title: "From World to Webb",
-        description: "A short project summary written for viewers who may know nothing about the background of the piece.",
-        background: "Use this space to explain why this film was made and what context inspired it.",
-        role: "Use this space to describe your role in planning, filming, editing, or directing.",
-        detail: "Use this space to share one memorable challenge, experiment, or fun behind-the-scenes detail.",
+        description: "From World to Webb is a documentary project created to introduce The Webb Schools through a clear and engaging visual narrative. The film aims to connect the school to a broader sense of identity, community, and place, presenting Webb not just as a campus but as an environment with its own character and values. The documentary format allowed the project to combine information, atmosphere, and visual storytelling in a way that felt both informative and personal.",
+        background: "This piece was made as a filmmaking class documentary project. The purpose was to present The Webb Schools to viewers who may not already know the school, while also capturing something meaningful about its environment and spirit. I wanted the film to feel polished and accessible, but also sincere, so that it could function as more than just an informational video.",
+        role: "I contributed to organizing the structure of the documentary, capturing footage, and shaping the final edit. That meant thinking not only about individual shots, but also about how the film would flow as a complete introduction. I worked to make sure the scenes connected smoothly, the pacing stayed engaging, and the overall presentation remained clear for an audience unfamiliar with Webb.",
+        detail: "A memorable challenge in this project was deciding how to condense a larger subject into a short, coherent documentary. There was a balance between showing enough visual variety to represent the school well and keeping the film focused enough to hold attention. Editing became especially important because it determined how the audience would move through the school visually and emotionally.",
       },
     ]
   },
@@ -320,10 +324,10 @@ export default function Home() {
         >
           <h3 className="text-4xl font-bold tracking-tighter mb-8">About Me</h3>
           <p className="text-xl text-zinc-600 dark:text-zinc-400 leading-relaxed">
-            {SECTIONS.find(s => s.id === "introduction")?.description}
+            My name is Michael Huang, and I am a student at The Webb Schools, a private boarding school in Claremont, California. Throughout my life, I have been guided by three core values: persistence, curiosity, and humility. These are not only the principles I strive to uphold, but also the values my family has instilled in me from an early age.
           </p>
           <p className="mt-4 text-lg text-zinc-500 dark:text-zinc-300 leading-relaxed">
-            Here, I will share more about my journey, passions, and what drives my creative and technical pursuits. Stay tuned for more personal insights!
+            As I have grown, these qualities have become intertwined with my passions and the person I aspire to become. My fascination with mathematics began in elementary school and has continued to grow ever since—what started as a love for solving challenging problems has evolved into a desire to understand the theories behind mathematics and explore its real-world applications.
           </p>
         </motion.div>
       </section>
@@ -506,10 +510,12 @@ export default function Home() {
                       <p className={`mt-4 max-w-3xl text-base leading-relaxed ${sectionMutedClass}`}>
                         {activeArticle.description}
                       </p>
-                      <div className={`mt-6 ${softBlockClass} p-5`}>
-                        <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-40">Reader-Friendly Summary</p>
-                        <div className="mt-3 min-h-[5rem]" />
-                      </div>
+                      {activeArticle.summary && (
+                        <div className={`mt-6 ${softBlockClass} p-5`}>
+                          <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-40">Reader-Friendly Summary</p>
+                          <p className={`mt-3 text-sm leading-relaxed ${sectionBodyClass}`}>{activeArticle.summary}</p>
+                        </div>
+                      )}
                       <a
                         href={activeArticle.src}
                         target="_blank"
@@ -533,6 +539,9 @@ export default function Home() {
                     <h3 className="text-4xl font-bold tracking-tighter uppercase mb-4">{section.title}</h3>
                     <p className={`text-xl max-w-md leading-relaxed ${sectionMutedClass}`}>
                       {section.description}
+                    </p>
+                    <p className={`mt-4 text-base leading-relaxed ${sectionBodyClass}`}>
+                      The following study guides were generated by AI based on my handwritten notes from the mathematics courses I have completed.
                     </p>
                   </div>
                 </div>
@@ -577,10 +586,12 @@ export default function Home() {
                       <p className={`mt-4 max-w-3xl text-base leading-relaxed ${sectionMutedClass}`}>
                         {activeNote.summary}
                       </p>
-                      <div className={`mt-6 ${softBlockClass} p-5`}>
-                        <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-40">Explain This for a General Reader</p>
-                        <div className="mt-3 min-h-[5rem]" />
-                      </div>
+                      {activeNote.explanation && (
+                        <div className={`mt-6 ${softBlockClass} p-5`}>
+                          <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-40">Explain This for a General Reader</p>
+                          <p className={`mt-3 text-sm leading-relaxed ${sectionBodyClass}`}>{activeNote.explanation}</p>
+                        </div>
+                      )}
                       <a
                         href={activeNote.src}
                         target="_blank"
@@ -683,12 +694,16 @@ export default function Home() {
                               </div>
                             ))}
                           </div>
-                          <div className={`mt-6 ${softBlockClass} px-4 py-3`}>
-                            <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-40">
-                              Brief Description for a General Reader
-                            </p>
-                            <div className="mt-2 min-h-[3.5rem]" />
-                          </div>
+                          {"briefDescription" in activeEngineeringSection && activeEngineeringSection.briefDescription && (
+                            <div className={`mt-6 ${softBlockClass} px-4 py-3`}>
+                              <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-40">
+                                Brief Description for a General Reader
+                              </p>
+                              <p className={`mt-2 whitespace-pre-line text-sm leading-relaxed ${sectionBodyClass}`}>
+                                {activeEngineeringSection.briefDescription}
+                              </p>
+                            </div>
+                          )}
                         </div>
                       )}
                       {"items" in activeEngineeringSection && activeEngineeringSection.items && (
@@ -749,12 +764,14 @@ export default function Home() {
                                     ))}
                                   </div>
                                 )}
-                                <div className={`mt-5 ${softBlockClass} px-4 py-3`}>
-                                  <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-40">
-                                    Describe the Project in Plain Language
-                                  </p>
-                                  <div className="mt-2 min-h-[5rem]" />
-                                </div>
+                                {"plainLanguage" in activeRobotProject && activeRobotProject.plainLanguage && (
+                                  <div className={`mt-5 ${softBlockClass} px-4 py-3`}>
+                                    <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-40">
+                                      Describe the Project in Plain Language
+                                    </p>
+                                    <p className={`mt-2 text-sm leading-relaxed ${sectionBodyClass}`}>{activeRobotProject.plainLanguage}</p>
+                                  </div>
+                                )}
                               </div>
                             );
                           })()}
@@ -773,12 +790,16 @@ export default function Home() {
                               <ArrowRight className="h-4 w-4" />
                             </a>
                           </div>
-                          <div className={`mt-5 ${softBlockClass} px-4 py-3`}>
-                            <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-40">
-                              Brief Description for a General Reader
-                            </p>
-                            <div className="mt-2 min-h-[4rem]" />
-                          </div>
+                          {"briefDescription" in activeEngineeringSection && activeEngineeringSection.briefDescription && (
+                            <div className={`mt-5 ${softBlockClass} px-4 py-3`}>
+                              <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-40">
+                                Brief Description for a General Reader
+                              </p>
+                              <p className={`mt-2 whitespace-pre-line text-sm leading-relaxed ${sectionBodyClass}`}>
+                                {activeEngineeringSection.briefDescription}
+                              </p>
+                            </div>
+                          )}
                         </div>
                       )}
                       {"link" in activeEngineeringSection && activeEngineeringSection.link && (
@@ -794,12 +815,16 @@ export default function Home() {
                               <ArrowRight className="h-4 w-4" />
                             </a>
                           </div>
-                          <div className={`mt-5 ${softBlockClass} px-4 py-3`}>
-                            <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-40">
-                              Brief Description for a General Reader
-                            </p>
-                            <div className="mt-2 min-h-[4rem]" />
-                          </div>
+                          {"briefDescription" in activeEngineeringSection && activeEngineeringSection.briefDescription && (
+                            <div className={`mt-5 ${softBlockClass} px-4 py-3`}>
+                              <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-40">
+                                Brief Description for a General Reader
+                              </p>
+                              <p className={`mt-2 whitespace-pre-line text-sm leading-relaxed ${sectionBodyClass}`}>
+                                {activeEngineeringSection.briefDescription}
+                              </p>
+                            </div>
+                          )}
                         </div>
                       )}
                     </div>
