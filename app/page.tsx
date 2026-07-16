@@ -323,10 +323,10 @@ export default function Home() {
           className="max-w-3xl mx-auto text-center"
         >
           <h3 className="text-4xl font-bold tracking-tighter mb-8">About Me</h3>
-          <p className="text-base md:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
+          <p className="text-base md:text-lg text-zinc-700 dark:text-zinc-200 leading-relaxed">
             My name is Michael Huang, and I am a student at The Webb Schools, a private boarding school in Claremont, California. Throughout my life, I have been guided by three core values: persistence, curiosity, and humility. These are not only the principles I strive to uphold, but also the values my family has instilled in me from an early age.
           </p>
-          <p className="mt-4 text-base md:text-lg text-zinc-500 dark:text-zinc-300 leading-relaxed">
+          <p className="mt-4 text-base md:text-lg text-zinc-700 dark:text-zinc-200 leading-relaxed">
             As I have grown, these qualities have become intertwined with my passions and the person I aspire to become. My fascination with mathematics began in elementary school and has continued to grow ever since—what started as a love for solving challenging problems has evolved into a desire to understand the theories behind mathematics and explore its real-world applications.
           </p>
         </motion.div>
@@ -337,8 +337,8 @@ export default function Home() {
         {SECTIONS.map((section, index) => {
           const isDarkSection = index % 2 === 0;
           const sectionBorderClass = isDarkSection ? "border-white/10" : "border-black/10";
-          const sectionMutedClass = isDarkSection ? "text-zinc-300" : "text-zinc-600";
           const sectionBodyClass = isDarkSection ? "text-zinc-200" : "text-zinc-700";
+          const sectionMutedClass = sectionBodyClass;
           const iconWrapperClass = isDarkSection
             ? "p-3 bg-white text-black rounded-full"
             : "p-3 bg-black text-white rounded-full";
@@ -863,7 +863,7 @@ export default function Home() {
           <motion.div style={{ x }} className="flex gap-12 px-16">
             <div className="flex flex-col justify-center min-w-[52vw] pr-10">
               <h3 className="text-4xl font-bold tracking-tighter">Art Gallery</h3>
-              <div className="mt-8 max-w-3xl space-y-6 text-base md:text-lg leading-8 opacity-60">
+              <div className="mt-8 max-w-3xl space-y-6 text-base md:text-lg leading-8 text-zinc-300 dark:text-zinc-700">
                 <p>
                   Art is my refuge—a place to slow down, reflect, and express myself beyond words. It helps me notice small details and translate thoughts and experiences into something tangible.
                 </p>
