@@ -115,7 +115,7 @@ const SECTIONS = [
       {
         title: "Beaver Amphibious Robotics",
         description: "Inspired by my experiences in FTC robotics, I wanted to pursue an engineering challenge beyond the classroom. I discovered that amphibious robots remain relatively underdeveloped despite their potential applications in environmental monitoring, search-and-rescue missions, and transportation across complex terrain. Motivated by this opportunity, I began designing my own bio-inspired amphibious robot.",
-        document: "/Amphibious.pdf",
+        document: "/science.pdf",
         briefDescription: "This project is documented in a separate technical paper that details its design concept, hardware architecture, reinforcement learning framework, and development progress.\n\nThe robot draws inspiration from the beaver—an amphibious mammal adapted to both land and water. Its broad, webbed feet and flat tail informed the robot’s mechanical design. To enable versatile locomotion, I employed reinforcement learning to train the robot to swim, walk, and run across diverse environments.",
       },
       {
