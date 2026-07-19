@@ -360,63 +360,66 @@ export default function Home() {
         ref={introductionGalleryRef}
       >
         <div className="sticky top-0 flex h-screen items-center overflow-hidden px-8 md:px-16">
-          <motion.div
-            style={{ x: introductionX }}
-            className="pointer-events-none absolute inset-y-0 left-0 flex items-center gap-10 px-8 md:px-16"
-          >
-            {ABOUT_ME_DISPLAYS.map((display, displayIndex) => (
-              <div
-                key={`about-display-${displayIndex}`}
-                className="flex min-w-[82vw] max-w-[82vw] flex-col rounded-[2rem] border border-black/15 bg-white/68 p-4 shadow-[0_22px_80px_rgba(0,0,0,0.10)] backdrop-blur-sm dark:border-white/15 dark:bg-zinc-950/55 dark:shadow-[0_22px_80px_rgba(0,0,0,0.28)]"
+          <div className="relative z-10 mx-auto grid w-full max-w-[92rem] items-center gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-12">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+              className="rounded-[2rem] border border-black/10 bg-white/92 p-8 text-left shadow-[0_24px_80px_rgba(0,0,0,0.10)] backdrop-blur-[6px] dark:border-white/12 dark:bg-black/82 dark:shadow-[0_24px_80px_rgba(0,0,0,0.34)] md:p-10"
+            >
+              <h3 className="mb-8 text-4xl font-bold tracking-tighter">About Me</h3>
+              <p className="text-base leading-relaxed text-zinc-700 dark:text-zinc-200 md:text-lg">
+                My name is Michael Huang, and I am a student at The Webb Schools, a private boarding school in Claremont, California. Throughout my life, I have been guided by three core values: persistence, curiosity, and humility. These are not only the principles I strive to uphold, but also the values my family has instilled in me from an early age.
+              </p>
+              <p className="mt-4 text-base leading-relaxed text-zinc-700 dark:text-zinc-200 md:text-lg">
+                As I have grown, these qualities have become intertwined with my passions and the person I aspire to become. My fascination with mathematics began in elementary school and has continued to grow ever since—what started as a love for solving challenging problems has evolved into a desire to understand the theories behind mathematics and explore its real-world applications.
+              </p>
+            </motion.div>
+
+            <div className="relative h-[58vh] overflow-hidden rounded-[2.25rem] border border-black/12 bg-white/72 shadow-[0_26px_90px_rgba(0,0,0,0.12)] backdrop-blur-sm dark:border-white/12 dark:bg-zinc-950/60 dark:shadow-[0_26px_90px_rgba(0,0,0,0.32)]">
+              <motion.div
+                style={{ x: introductionX }}
+                className="pointer-events-none absolute inset-y-0 left-0 flex items-center gap-8 px-4 md:px-6"
               >
-                <div className="grid flex-1 grid-cols-[1.15fr_0.85fr] gap-4">
-                  <div className="relative min-h-[58vh] overflow-hidden rounded-[1.5rem] bg-black/[0.04] shadow-[0_16px_40px_rgba(0,0,0,0.10)] dark:bg-white/[0.08]">
-                    <Image
-                      src={display[0]}
-                      alt=""
-                      fill
-                      sizes="(max-width: 768px) 100vw, 40vw"
-                      className="object-contain p-3 saturate-110 contrast-110 transition-transform duration-700"
-                      priority={displayIndex === 0}
-                    />
-                  </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    {display.slice(1).map((src) => (
-                      <div
-                        key={src}
-                        className="relative min-h-[28vh] overflow-hidden rounded-[1.25rem] bg-black/[0.04] shadow-[0_14px_34px_rgba(0,0,0,0.10)] dark:bg-white/[0.08]"
-                      >
+                {ABOUT_ME_DISPLAYS.map((display, displayIndex) => (
+                  <div
+                    key={`about-display-${displayIndex}`}
+                    className="flex min-w-[76vw] max-w-[76vw] flex-col rounded-[1.85rem] border border-black/12 bg-white/88 p-4 shadow-[0_22px_80px_rgba(0,0,0,0.10)] dark:border-white/12 dark:bg-zinc-950/78 dark:shadow-[0_22px_80px_rgba(0,0,0,0.28)] md:min-w-[60vw] md:max-w-[60vw] lg:min-w-[48vw] lg:max-w-[48vw]"
+                  >
+                    <div className="grid flex-1 grid-cols-[1.15fr_0.85fr] gap-4">
+                      <div className="relative min-h-[48vh] overflow-hidden rounded-[1.5rem] bg-black/[0.04] shadow-[0_16px_40px_rgba(0,0,0,0.10)] dark:bg-white/[0.08]">
                         <Image
-                          src={src}
+                          src={display[0]}
                           alt=""
                           fill
-                          sizes="(max-width: 768px) 100vw, 20vw"
-                          className="object-contain p-2 saturate-110 contrast-110 transition-transform duration-700"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 32vw"
+                          className="object-contain p-3 saturate-110 contrast-110 transition-transform duration-700"
+                          priority={displayIndex === 0}
                         />
                       </div>
-                    ))}
+                      <div className="grid grid-cols-2 gap-4">
+                        {display.slice(1).map((src) => (
+                          <div
+                            key={src}
+                            className="relative min-h-[22vh] overflow-hidden rounded-[1.25rem] bg-black/[0.04] shadow-[0_14px_34px_rgba(0,0,0,0.10)] dark:bg-white/[0.08]"
+                          >
+                            <Image
+                              src={src}
+                              alt=""
+                              fill
+                              sizes="(max-width: 768px) 50vw, (max-width: 1200px) 24vw, 14vw"
+                              className="object-contain p-2 saturate-110 contrast-110 transition-transform duration-700"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            ))}
-          </motion.div>
-
-          <div className="pointer-events-none absolute inset-y-10 left-1/2 z-10 w-[min(88vw,60rem)] -translate-x-1/2 rounded-[2.5rem] bg-white/92 shadow-[0_0_80px_rgba(255,255,255,0.9)] backdrop-blur-[6px] dark:bg-black/88 dark:shadow-[0_0_80px_rgba(0,0,0,0.85)]" />
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-            className="relative z-20 mx-auto max-w-3xl text-center"
-          >
-            <h3 className="mb-8 text-4xl font-bold tracking-tighter">About Me</h3>
-            <p className="text-base leading-relaxed text-zinc-700 dark:text-zinc-200 md:text-lg">
-              My name is Michael Huang, and I am a student at The Webb Schools, a private boarding school in Claremont, California. Throughout my life, I have been guided by three core values: persistence, curiosity, and humility. These are not only the principles I strive to uphold, but also the values my family has instilled in me from an early age.
-            </p>
-            <p className="mt-4 text-base leading-relaxed text-zinc-700 dark:text-zinc-200 md:text-lg">
-              As I have grown, these qualities have become intertwined with my passions and the person I aspire to become. My fascination with mathematics began in elementary school and has continued to grow ever since—what started as a love for solving challenging problems has evolved into a desire to understand the theories behind mathematics and explore its real-world applications.
-            </p>
-          </motion.div>
+                ))}
+              </motion.div>
+            </div>
+          </div>
         </div>
       </section>
 
