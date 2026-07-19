@@ -360,7 +360,7 @@ export default function Home() {
         ref={introductionGalleryRef}
       >
         <div className="sticky top-0 flex h-screen items-center overflow-hidden px-8 md:px-16">
-          <div className="relative z-10 mx-auto grid w-full max-w-[92rem] items-center gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-12">
+          <div className="relative z-10 mx-auto grid w-full max-w-[92rem] items-center gap-8 md:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] md:gap-10 lg:gap-12">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -377,7 +377,7 @@ export default function Home() {
               </p>
             </motion.div>
 
-            <div className="relative h-[58vh] overflow-hidden rounded-[2.25rem] border border-black/12 bg-white/72 shadow-[0_26px_90px_rgba(0,0,0,0.12)] backdrop-blur-sm dark:border-white/12 dark:bg-zinc-950/60 dark:shadow-[0_26px_90px_rgba(0,0,0,0.32)]">
+            <div className="relative h-[42vh] overflow-hidden rounded-[2.25rem] border border-black/12 bg-white/72 shadow-[0_26px_90px_rgba(0,0,0,0.12)] backdrop-blur-sm dark:border-white/12 dark:bg-zinc-950/60 dark:shadow-[0_26px_90px_rgba(0,0,0,0.32)] md:h-[58vh]">
               <motion.div
                 style={{ x: introductionX }}
                 className="pointer-events-none absolute inset-y-0 left-0 flex items-center gap-8 px-4 md:px-6"
