@@ -22,7 +22,7 @@ const PROJECTS = [
 ];
 
 const DAILY_PHOTOS = [
-  "/Daily/about-me-screenshot.png",
+  "/Daily/WechatIMG792.jpg",
   "/Daily/WechatIMG792.jpg",
   "/Daily/WechatIMG793.jpg",
   "/Daily/WechatIMG794.jpg",
