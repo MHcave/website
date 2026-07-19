@@ -22,7 +22,7 @@ const PROJECTS = [
 ];
 
 const DAILY_PHOTOS = [
-  "/Daily/WechatIMG792.jpg",
+  "/Daily/about-me-screenshot.png?v=2",
   "/Daily/WechatIMG792.jpg",
   "/Daily/WechatIMG793.jpg",
   "/Daily/WechatIMG794.jpg",
@@ -394,6 +394,7 @@ export default function Home() {
                           alt=""
                           fill
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 32vw"
+                          unoptimized
                           className="object-contain p-3 saturate-110 contrast-110 transition-transform duration-700"
                           priority={displayIndex === 0}
                         />
@@ -409,6 +410,7 @@ export default function Home() {
                               alt=""
                               fill
                               sizes="(max-width: 768px) 50vw, (max-width: 1200px) 24vw, 14vw"
+                              unoptimized
                               className="object-contain p-2 saturate-110 contrast-110 transition-transform duration-700"
                             />
                           </div>
