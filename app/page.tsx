@@ -4,13 +4,24 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
 import Image from "next/image";
 import { 
+  Aperture,
   ArrowDown,
   ArrowRight, 
+  Bot,
   BookOpen, 
+  BrainCircuit,
+  Clapperboard,
+  Cog,
+  DraftingCompass,
   Film, 
   Lightbulb, 
+  NotebookPen,
+  Palette,
+  Pencil,
   Search,
-  Sigma 
+  Sigma,
+  Variable,
+  Waves,
 } from "lucide-react";
 
 const PROJECTS = [
@@ -55,6 +66,75 @@ const ABOUT_ME_DISPLAYS = [
   DAILY_PHOTOS.slice(15, 20),
   DAILY_PHOTOS.slice(20, 25),
 ];
+
+function SectionIllustration({
+  sectionId,
+  isDark = false,
+}: {
+  sectionId: string;
+  isDark?: boolean;
+}) {
+  const illustrationTheme =
+    sectionId === "art-gallery"
+      ? "border-white/15 bg-white/[0.04] text-white dark:border-black/10 dark:bg-black/[0.025] dark:text-black"
+      : isDark
+        ? "border-white/15 bg-white/[0.04] text-white"
+        : "border-black/10 bg-black/[0.025] text-black";
+
+  return (
+    <div
+      aria-hidden="true"
+      data-section-illustration={sectionId}
+      className={`relative ml-auto hidden h-32 w-52 shrink-0 overflow-hidden rounded-[2rem] border md:block ${illustrationTheme}`}
+    >
+      <div className="absolute inset-0 opacity-[0.08] [background-image:linear-gradient(currentColor_1px,transparent_1px),linear-gradient(90deg,currentColor_1px,transparent_1px)] [background-size:24px_24px]" />
+
+      {sectionId === "engineering" && (
+        <>
+          <Cog className="absolute -left-3 top-5 h-24 w-24 stroke-[1.15] opacity-80" />
+          <Bot className="absolute left-[5.7rem] top-7 h-16 w-16 stroke-[1.2]" />
+          <Waves className="absolute bottom-3 right-3 h-9 w-20 stroke-[1.1] opacity-60" />
+          <BrainCircuit className="absolute right-5 top-4 h-7 w-7 stroke-[1.2] opacity-60" />
+        </>
+      )}
+
+      {sectionId === "mathematics" && (
+        <>
+          <Sigma className="absolute left-5 top-4 h-20 w-20 stroke-[1.05]" />
+          <DraftingCompass className="absolute bottom-2 right-7 h-24 w-24 stroke-[1.05] opacity-75" />
+          <Variable className="absolute right-5 top-4 h-9 w-9 stroke-[1.2]" />
+          <span className="absolute bottom-4 left-7 font-serif text-xl italic opacity-60">∫ f(x) dx</span>
+        </>
+      )}
+
+      {sectionId === "articles" && (
+        <>
+          <NotebookPen className="absolute left-5 top-5 h-20 w-20 stroke-[1.05]" />
+          <BookOpen className="absolute bottom-4 right-5 h-16 w-16 stroke-[1.1] opacity-75" />
+          <span className="absolute right-7 top-5 max-w-20 text-right font-serif text-sm italic leading-5 opacity-60">
+            ideas into words
+          </span>
+        </>
+      )}
+
+      {sectionId === "filmmaking" && (
+        <>
+          <Clapperboard className="absolute left-5 top-5 h-20 w-20 stroke-[1.05]" />
+          <Aperture className="absolute bottom-3 right-5 h-20 w-20 stroke-[1.05] opacity-80" />
+          <Film className="absolute right-7 top-4 h-9 w-9 stroke-[1.2] opacity-60" />
+        </>
+      )}
+
+      {sectionId === "art-gallery" && (
+        <>
+          <Palette className="absolute left-5 top-5 h-20 w-20 stroke-[1.05]" />
+          <Pencil className="absolute bottom-3 right-8 h-24 w-24 rotate-[-12deg] stroke-[1.05] opacity-80" />
+          <Aperture className="absolute right-5 top-4 h-8 w-8 stroke-[1.2] opacity-55" />
+        </>
+      )}
+    </div>
+  );
+}
 
 const SECTIONS = [
   { 
@@ -156,6 +236,14 @@ const SECTIONS = [
     description: "I started learning filmmaking in my high school freshman year. Through filmmaking, I learned how to film cinematic videos and edit clips into high-quality pieces. My projects span PSAs, music, narratives, and documentaries.",
     videos: [
       {
+        src: "https://www.youtube.com/embed/tcTpSjCfeXI",
+        title: "From World to Webb",
+        description: "From World to Webb is a documentary project created to introduce The Webb Schools through a clear and engaging visual narrative. The film aims to connect the school to a broader sense of identity, community, and place, presenting Webb not just as a campus but as an environment with its own character and values. The documentary format allowed the project to combine information, atmosphere, and visual storytelling in a way that felt both informative and personal.",
+        background: "This piece was made as a filmmaking class documentary project. The purpose was to present The Webb Schools to viewers who may not already know the school, while also capturing something meaningful about its environment and spirit. I wanted the film to feel polished and accessible, but also sincere, so that it could function as more than just an informational video.",
+        role: "I contributed to organizing the structure of the documentary, capturing footage, and shaping the final edit. That meant thinking not only about individual shots, but also about how the film would flow as a complete introduction. I worked to make sure the scenes connected smoothly, the pacing stayed engaging, and the overall presentation remained clear for an audience unfamiliar with Webb.",
+        detail: "A memorable challenge in this project was deciding how to condense a larger subject into a short, coherent documentary. There was a balance between showing enough visual variety to represent the school well and keeping the film focused enough to hold attention. Editing became especially important because it determined how the audience would move through the school visually and emotionally.",
+      },
+      {
         src: "https://www.youtube.com/embed/UCMLRu2iUjw",
         title: "Procrastination",
         description: "Procrastination is a short PSA-style film that examines how delay can quietly grow from a small habit into a major source of stress. The piece follows the emotional pattern many of my peers know well: putting something off, feeling temporary relief, losing track of time, and then facing the pressure of an approaching deadline. Instead of treating procrastination as just laziness, the film presents it as a cycle of avoidance, distraction, guilt, and urgency.",
@@ -178,14 +266,6 @@ const SECTIONS = [
         background: "I approached this project as an opportunity to explore a more poetic side of filmmaking. Rather than building the film around a straightforward message, I wanted it to create an atmosphere that felt personal, thoughtful, and slightly unsettling in a meaningful way. The focus was less on giving the viewer one fixed interpretation and more on allowing the piece to suggest emotion, memory, and vulnerability through visual storytelling.",
         role: "I helped shape the concept and visual approach of the film, including how the imagery, framing, and pacing would support the overall tone. I also worked on filming and editing, where much of the emotional effect of the piece was actually created. My role involved making decisions about what to show, what to leave ambiguous, and how long each moment should last in order to preserve the reflective quality of the film.",
         detail: "One of the most memorable parts of the project was realizing how strongly mood depends on restraint. In a piece like this, small changes in timing, framing, or sequence can completely alter the emotional effect. It was rewarding to see how a quieter, less direct filmmaking style could still communicate something powerful when the visuals and pacing were handled carefully.",
-      },
-      {
-        src: "https://www.youtube.com/embed/tcTpSjCfeXI",
-        title: "From World to Webb",
-        description: "From World to Webb is a documentary project created to introduce The Webb Schools through a clear and engaging visual narrative. The film aims to connect the school to a broader sense of identity, community, and place, presenting Webb not just as a campus but as an environment with its own character and values. The documentary format allowed the project to combine information, atmosphere, and visual storytelling in a way that felt both informative and personal.",
-        background: "This piece was made as a filmmaking class documentary project. The purpose was to present The Webb Schools to viewers who may not already know the school, while also capturing something meaningful about its environment and spirit. I wanted the film to feel polished and accessible, but also sincere, so that it could function as more than just an informational video.",
-        role: "I contributed to organizing the structure of the documentary, capturing footage, and shaping the final edit. That meant thinking not only about individual shots, but also about how the film would flow as a complete introduction. I worked to make sure the scenes connected smoothly, the pacing stayed engaging, and the overall presentation remained clear for an audience unfamiliar with Webb.",
-        detail: "A memorable challenge in this project was deciding how to condense a larger subject into a short, coherent documentary. There was a balance between showing enough visual variety to represent the school well and keeping the film focused enough to hold attention. Editing became especially important because it determined how the audience would move through the school visually and emotionally.",
       },
     ]
   },
@@ -470,7 +550,7 @@ export default function Home() {
           >
             {section.id === "filmmaking" ? (
               <>
-                <div className="flex items-start gap-4 mb-8">
+                <div className="flex w-full items-start gap-4 mb-8">
                   <div className={iconWrapperClass}>
                     {section.icon}
                   </div>
@@ -480,6 +560,7 @@ export default function Home() {
                       {section.description}
                     </p>
                   </div>
+                  <SectionIllustration sectionId="filmmaking" isDark={isDarkSection} />
                 </div>
                 <div className={tabListClass} role="tablist" aria-label={`${section.title} videos`}>
                   {section.videos && section.videos.map((video, videoIndex) => (
@@ -552,7 +633,7 @@ export default function Home() {
               </>
             ) : section.id === "articles" ? (
               <>
-                <div className="flex items-start gap-4 mb-8">
+                <div className="flex w-full items-start gap-4 mb-8">
                   <div className={iconWrapperClass}>
                     {section.icon}
                   </div>
@@ -562,6 +643,7 @@ export default function Home() {
                       {section.description}
                     </p>
                   </div>
+                  <SectionIllustration sectionId="articles" isDark={isDarkSection} />
                 </div>
                 <div className={tabListClass} role="tablist" aria-label={`${section.title} files`}>
                   {section.files && section.files.map((file, fileIndex) => (
@@ -625,7 +707,7 @@ export default function Home() {
               </>
             ) : section.id === "mathematics" ? (
               <>
-                <div className="flex items-start gap-4 mb-8">
+                <div className="flex w-full items-start gap-4 mb-8">
                   <div className={iconWrapperClass}>
                     {section.icon}
                   </div>
@@ -638,6 +720,7 @@ export default function Home() {
                       The following study guides were generated by AI based on my handwritten notes from the mathematics courses I have completed.
                     </p>
                   </div>
+                  <SectionIllustration sectionId="mathematics" isDark={isDarkSection} />
                 </div>
                 <div className={tabListClass} role="tablist" aria-label={`${section.title} notes`}>
                   {section.notes && section.notes.map((note, noteIndex) => (
@@ -701,7 +784,7 @@ export default function Home() {
               </>
             ) : section.id === "engineering" ? (
               <>
-                <div className="flex items-start gap-4 mb-8">
+                <div className="flex w-full items-start gap-4 mb-8">
                   <div className={iconWrapperClass}>
                     {section.icon}
                   </div>
@@ -711,6 +794,7 @@ export default function Home() {
                       {section.description}
                     </p>
                   </div>
+                  <SectionIllustration sectionId="engineering" isDark={isDarkSection} />
                 </div>
                 <div className={tabListClass} role="tablist" aria-label={`${section.title} sections`}>
                   {section.sections && section.sections.map((engineeringSection, engineeringIndex) => (
@@ -956,7 +1040,10 @@ export default function Home() {
         <div className="sticky top-0 h-screen flex items-center overflow-hidden">
           <motion.div style={{ x: artGalleryX }} className="flex gap-12 px-16">
             <div className="flex flex-col justify-center min-w-[52vw] pr-10">
-              <h3 className="text-4xl font-bold tracking-tighter">Art Gallery</h3>
+              <div className="flex items-start gap-6">
+                <h3 className="text-4xl font-bold tracking-tighter">Art Gallery</h3>
+                <SectionIllustration sectionId="art-gallery" />
+              </div>
               <div className="mt-8 max-w-3xl space-y-6 text-base md:text-lg leading-8 text-zinc-300 dark:text-zinc-700">
                 <p>
                   Art is my refuge—a place to slow down, reflect, and express myself beyond words. It helps me notice small details and translate thoughts and experiences into something tangible.
