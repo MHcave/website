@@ -337,13 +337,14 @@ export default function Home() {
           className="max-w-4xl"
         >
           <div className="max-w-4xl">
-            <h2 className="text-5xl md:text-7xl font-semibold tracking-tight leading-tight">
+            <h1 className="text-5xl md:text-7xl font-semibold tracking-tight leading-tight">
               <span className="inline-block border-b border-white/60 pb-3">
-                Persistence, Humility, Curiosity
+                From Equations &amp; Machines
+                <span className="block">to Stories &amp; Images.</span>
               </span>
-            </h2>
+            </h1>
             <p className="mt-4 text-base md:text-lg opacity-90">
-              Michael Huang&apos;s Portfolio
+              Michael Huang&apos;s portfolio in mathematics, engineering, writing, filmmaking, and art.
             </p>
             <a href="#art-gallery" className="mt-10 inline-flex items-center gap-3">
               <span className="text-sm tracking-tight opacity-90">Scroll</span>
